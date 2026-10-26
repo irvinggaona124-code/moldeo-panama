@@ -3,70 +3,68 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const u = (path: string) => `${base}${path}`;
 ---
 
-<section class="py-16 md:py-24 bg-slate-950">
+<section class="py-16 md:py-24 bg-slate-50 border-y border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
-      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+    <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-clean-xl">
       <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-4">
           Compromiso Ético & Legal
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
           El Pacto de Empresa Formadora de Panamá
         </h2>
-        <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
-          Para garantizar a los estudiantes universitarios que en Moldeo Panamá no encontrarán falsas pasantías que exigen "2 años de experiencia previa", toda empresa debe suscribir digitalmente este triple compromiso antes de publicar:
+        <p class="mt-3 text-base text-slate-600 leading-relaxed">
+          Para garantizar que en Moldeo Panamá ningún estudiante encuentre ofertas engañosas que exijan "2 años de experiencia previa", toda empresa debe suscribir este triple compromiso antes de publicar:
         </p>
       </div>
 
       <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- Condición 1 -->
-        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-6 relative">
-          <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center justify-center font-bold text-lg mb-4">
+        <div class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-700 border border-rose-200 flex items-center justify-center font-bold text-lg mb-4 shadow-clean">
             ✕
           </div>
-          <h3 class="text-base font-bold text-white">0 Experiencia Previa</h3>
-          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
-            Queda prohibido solicitar meses o años de experiencia previa en la vacante. El filtro se realiza exclusivamente por índice académico, nivel de inglés EF SET y perfil vocacional de moldeabilidad.
+          <h3 class="text-base font-bold text-slate-900">0 Experiencia Previa</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+            Queda prohibido solicitar meses o años de experiencia previa. El filtro se realiza exclusivamente por índice académico, inglés EF SET y perfil vocacional de moldeabilidad.
           </p>
         </div>
 
         <!-- Condición 2 -->
-        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-6 relative">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center font-bold text-lg mb-4">
+        <div class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold text-lg mb-4 shadow-clean">
             👨‍🏫
           </div>
-          <h3 class="text-base font-bold text-white">Tutor Idóneo Asignado</h3>
-          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
-            La empresa debe designar a un profesional con la idoneidad correspondiente para guiar al joven, firmar las evaluaciones periódicas y convalidar el Trabajo de Graduación exigido por la universidad.
+          <h3 class="text-base font-bold text-slate-900">Tutor Idóneo Asignado</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+            La empresa debe designar a un profesional idóneo colegiado para guiar al joven, firmar las evaluaciones mensuales y convalidar el Trabajo de Graduación universitaria.
           </p>
         </div>
 
         <!-- Condición 3 -->
-        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-6 relative">
-          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center font-bold text-lg mb-4">
+        <div class="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-center font-bold text-lg mb-4 shadow-clean">
             ⚖️
           </div>
-          <h3 class="text-base font-bold text-white">Transparencia Remunerativa</h3>
-          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
-            Claridad absoluta desde la publicación sobre el marco legal: estipendio de Ley 513 (B/. 450/mes con póliza), Mi Primer Empleo (salario mínimo cofinanciado) o acuerdo académico formal de graduación.
+          <h3 class="text-base font-bold text-slate-900">Transparencia Remunerativa</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+            Claridad absoluta desde la publicación sobre el marco legal: estipendio de Ley 513 (B/. 450/mes con póliza), Mi Primer Empleo (salario mínimo cofinanciado) o acuerdo académico formal.
           </p>
         </div>
 
       </div>
 
       <!-- Action -->
-      <div class="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="text-xs text-slate-400 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>Las empresas firmantes reciben el distintivo público de <strong>"Empresa Formadora Verificada"</strong>.</span>
+      <div class="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-xs text-slate-500 font-medium flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Las empresas firmantes reciben el sello público de <strong>"Empresa Formadora Verificada"</strong>.</span>
         </div>
         <a 
           href={u('/publicar')} 
-          class="px-6 py-3 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-500/20 transition-all hover:scale-105"
+          class="px-6 py-3 rounded-full text-xs font-extrabold bg-[#D4F634] hover:bg-[#bce022] text-slate-950 shadow-clean transition-all active:scale-[0.98]"
         >
           Firmar Pacto y Publicar Vacante Gratis →
         </a>

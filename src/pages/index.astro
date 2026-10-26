@@ -40,24 +40,24 @@ const pageSchema = {
   <TrianguloLegal />
 
   <!-- Vitrina Destacada de Vacantes Cero Experiencia -->
-  <section class="py-16 md:py-24 bg-slate-950">
+  <section class="py-16 md:py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold uppercase tracking-wider mb-2">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold uppercase tracking-wider mb-2">
             Oportunidades Reales en Panamá
           </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
             Vitrina de Vacantes Cero Experiencia
           </h2>
-          <p class="mt-2 text-sm text-slate-400 max-w-xl">
+          <p class="mt-2 text-sm text-slate-600 max-w-xl">
             Pasantías y prácticas profesionales verificadas en empresas formadoras en Ciudad de Panamá, Panamá Oeste, Colón, Chiriquí y multinacionales SEM.
           </p>
         </div>
         <a 
           href={u('/vacantes')} 
-          class="inline-flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 group whitespace-nowrap"
+          class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-blue-700 group whitespace-nowrap"
         >
           <span>Ver las 30 vacantes activas</span>
           <span class="group-hover:translate-x-1 transition-transform">→</span>
@@ -69,7 +69,7 @@ const pageSchema = {
       <div class="mt-12 text-center">
         <a 
           href={u('/vacantes')} 
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-lg hover:scale-105 transition-all"
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 shadow-clean hover:shadow-clean-md transition-all active:scale-[0.98]"
         >
           <span>Explorar Catálogo Completo con Buscador y Filtros</span>
           <span>→</span>
@@ -80,31 +80,31 @@ const pageSchema = {
   </section>
 
   <!-- Calculadora Fiscal Interactiva -->
-  <section class="py-16 md:py-24 bg-slate-900/60 border-y border-slate-800">
+  <section class="py-16 md:py-24 bg-white border-y border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <CalculadoraFiscal />
     </div>
   </section>
 
   <!-- Directorio de Talento Moldeable (Anti-CV Anonimizado) -->
-  <section class="py-16 md:py-24 bg-slate-950">
+  <section class="py-16 md:py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-2">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-2">
             Evaluación Objetiva por Potencial
           </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
             Directorio de Talento Moldeable (Anti-CV)
           </h2>
-          <p class="mt-2 text-sm text-slate-400 max-w-xl">
+          <p class="mt-2 text-sm text-slate-600 max-w-xl">
             Universitarios pre-calificados con índice académico, inglés verificable EF SET, arquetipo RIASEC y video-pitch de 60 segundos.
           </p>
         </div>
         <a 
           href={u('/talento-moldeable')} 
-          class="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 group whitespace-nowrap"
+          class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-emerald-700 group whitespace-nowrap"
         >
           <span>Ver los 15 perfiles listos para pasantía</span>
           <span class="group-hover:translate-x-1 transition-transform">→</span>
@@ -116,7 +116,7 @@ const pageSchema = {
       <div class="mt-12 text-center">
         <a 
           href={u('/talento-moldeable')} 
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-lg hover:scale-105 transition-all"
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 shadow-clean hover:shadow-clean-md transition-all active:scale-[0.98]"
         >
           <span>Abrir Directorio de Candidatos Completo</span>
           <span>→</span>
@@ -127,7 +127,7 @@ const pageSchema = {
   </section>
 
   <!-- Test Vocacional RIASEC -->
-  <section class="py-16 md:py-24 bg-slate-900 border-y border-slate-800">
+  <section class="py-16 md:py-24 bg-white border-y border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <TestRiasec />
     </div>
@@ -137,16 +137,16 @@ const pageSchema = {
   <PactoFormadora />
 
   <!-- Kit de Práctica Profesional Descargable -->
-  <section class="py-16 md:py-24 bg-slate-900/50 border-t border-slate-800">
+  <section class="py-16 md:py-24 bg-white border-t border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-bold uppercase tracking-wider mb-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold uppercase tracking-wider mb-3">
           Herramientas Gratuitas de Graduación
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
           Kit Oficial de Práctica Profesional y Ley 513
         </h2>
-        <p class="mt-3 text-sm text-slate-400">
+        <p class="mt-3 text-sm text-slate-600">
           Plantillas listas para usar para coordinar tu práctica con la facultad y la empresa sin tropiezos burocráticos.
         </p>
       </div>
@@ -156,58 +156,32 @@ const pageSchema = {
   </section>
 
   <!-- FAQs Sección -->
-  <section class="py-16 md:py-24 bg-slate-950 border-t border-slate-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-16 md:py-24 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
           Preguntas Frecuentes sobre la Ley 513 y Prácticas en Panamá
         </h2>
-        <p class="mt-2 text-xs sm:text-sm text-slate-400">
+        <p class="mt-2 text-xs sm:text-sm text-slate-500">
           Respuestas técnicas sobre exención de CSS, deducibilidad fiscal y convalidación universitaria.
         </p>
       </div>
 
       <div class="space-y-4">
         {faqs.slice(0, 6).map((faq) => (
-          <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700 transition-colors">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-white text-sm list-none">
+          <details class="group bg-white border border-slate-200 rounded-2xl p-5 shadow-clean open:border-slate-300 transition-colors">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm list-none">
               <span class="pr-4">{faq.pregunta}</span>
-              <span class="text-emerald-400 font-bold group-open:rotate-180 transition-transform">▼</span>
+              <span class="text-slate-400 font-bold group-open:rotate-180 transition-transform">▼</span>
             </summary>
-            <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed pt-3 border-t border-slate-800">
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
               {faq.respuesta}
             </p>
           </details>
         ))}
       </div>
 
-    </div>
-  </section>
-
-  <!-- Final Call to Action -->
-  <section class="py-20 bg-gradient-to-t from-blue-950/60 via-slate-900 to-slate-950 border-t border-slate-800 text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-        ¿Listo para transformar el futuro del talento universitario en Panamá?
-      </h2>
-      <p class="mt-4 text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Ya seas un estudiante que necesita convalidar su Trabajo de Graduación o una empresa en busca de mentes frescas con incentivo fiscal del 100%.
-      </p>
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a 
-          href={u('/registro-estudiante')} 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/30 transition-all hover:scale-105"
-        >
-          Crear mi Perfil de Moldeabilidad Gratis
-        </a>
-        <a 
-          href={u('/publicar')} 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition-all hover:scale-105"
-        >
-          Publicar Vacante Formadora $0
-        </a>
-      </div>
     </div>
   </section>
 

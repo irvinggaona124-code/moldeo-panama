@@ -3,19 +3,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const u = (path: string) => `${base}${path}`;
 ---
 
-<section class="py-16 md:py-24 bg-slate-900 border-y border-slate-800">
+<section class="py-16 md:py-24 bg-white border-y border-slate-200/80">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-4">
-        Ventaja Competitiva B2B
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold uppercase tracking-wider mb-3">
+        Marco Legal Vigente en Panamá
       </div>
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-        El Triángulo Legal de Contratación Cero Experiencia en Panamá
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
+        El Triángulo Legal del Talento Joven: Tu Mayor Ventaja B2B
       </h2>
-      <p class="mt-4 text-base text-slate-400 leading-relaxed">
-        Ningún portal tradicional clasifica a los candidatos por su elegibilidad legal. Moldeo Panamá educa y acompaña a las empresas en las tres figuras jurídicas vigentes para moldear talento sin riesgos laborales.
+      <p class="mt-3 text-base text-slate-600 leading-relaxed">
+        Ningún portal tradicional clasifica a los candidatos por elegibilidad legal ni educa a las empresas en los incentivos fiscales panameños. Moldeo Panamá estructura cada vacante bajo una de las tres vías legales aplicables:
       </p>
     </div>
 
@@ -23,84 +23,88 @@ const u = (path: string) => `${base}${path}`;
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
       
       <!-- Vía 1: Ley 513 de Pasantías (2026) -->
-      <div class="bg-slate-950 border-2 border-emerald-500/40 rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative shadow-xl shadow-emerald-950/20">
-        <div class="absolute -top-3.5 right-6 px-3 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-xs font-bold uppercase tracking-wide">
+      <div class="bg-white border-2 border-emerald-500 rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative shadow-clean-lg hover:shadow-clean-xl transition-all">
+        <div class="absolute -top-3.5 right-6 px-3.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold uppercase tracking-wider">
           Sancionada 2026
         </div>
         <div>
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl font-black mb-5">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center text-lg font-black mb-4">
             01
           </div>
-          <h3 class="text-xl font-bold text-white">Programa de Pasantías (Ley 513 de 2026)</h3>
-          <p class="mt-2 text-xs font-semibold text-emerald-400">Reglamentada por Decreto Ejecutivo No. 1 de 31 de agosto de 2026</p>
+          <h3 class="text-xl font-bold text-slate-900 leading-snug">
+            Programa de Pasantías (Ley 513 de 2026)
+          </h3>
+          <p class="mt-1 text-xs font-semibold text-emerald-700">D.E. No. 1 de 31 de agosto de 2026</p>
           
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✓</span>
-              <span><strong>Edad:</strong> Jóvenes de 18 a 25 años (o menores de 18 con educación media terminada).</span>
+          <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-black">✓</span>
+              <span><strong>Edad:</strong> Jóvenes de 18 a 25 años (o menores con bachillerato terminado).</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-black">✓</span>
               <span><strong>Asignación:</strong> B/. 450.00/mes a cargo de la empresa (sin gasto para el Estado).</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✓</span>
-              <span><strong>Cero Cargas CSS:</strong> No constituye relación laboral ni salario. Exento de CSS (12.25%) y SE (1.50%).</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-black">✓</span>
+              <span><strong>0% Cargas Sociales:</strong> No constituye relación laboral. Exento de CSS (12.25%) y SE (1.50%).</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✓</span>
-              <span><strong>Incentivo Fiscal:</strong> El 100% del aporte es gasto deducible de Impuesto sobre la Renta.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-black">✓</span>
+              <span><strong>100% Deducible:</strong> Gasto operativo reportable en la Declaración de Rentas (DGI).</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✓</span>
-              <span><strong>Duración:</strong> Hasta 1 año continuo (jornada máxima de 40h semanales). Póliza de riesgo privada.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-black">✓</span>
+              <span><strong>Duración:</strong> Hasta 1 año continuo (máx. 40h/sem). Póliza de accidentes privada.</span>
             </li>
           </ul>
         </div>
 
-        <div class="mt-8 pt-5 border-t border-slate-800">
-          <a href={u('/calculadora-fiscal')} class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center justify-between group">
-            <span>Calcular ahorro neto bajo Ley 513</span>
+        <div class="mt-8 pt-4 border-t border-slate-100">
+          <a href={u('/calculadora-fiscal')} class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center justify-between group">
+            <span>Calcular ahorro fiscal exacto</span>
             <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
       </div>
 
       <!-- Vía 2: Mi Primer Empleo (D.E. 27 de 2024 / Ley 121) -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-lg">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-clean hover:shadow-clean-lg transition-all">
         <div>
-          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/30 flex items-center justify-center text-xl font-black mb-5">
+          <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-center text-lg font-black mb-4">
             02
           </div>
-          <h3 class="text-xl font-bold text-white">Programa "Mi Primer Empleo"</h3>
-          <p class="mt-2 text-xs font-semibold text-blue-400">Ley 121 de 2019 & Decreto Ejecutivo No. 27 de 3 de julio de 2024</p>
+          <h3 class="text-xl font-bold text-slate-900 leading-snug">
+            Programa "Mi Primer Empleo"
+          </h3>
+          <p class="mt-1 text-xs font-semibold text-blue-700">D.E. No. 27 de 3 de julio de 2024 / Ley 121</p>
           
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-blue-400 font-bold">✓</span>
-              <span><strong>Edad:</strong> 17 a 24 años panameños con diploma bachiller, técnico o universitario sin historial.</span>
+          <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-black">✓</span>
+              <span><strong>Perfil:</strong> 17 a 24 años panameños con diploma bachiller, técnico o universitario sin historial formal.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-blue-400 font-bold">✓</span>
-              <span><strong>Subsidio Estatal:</strong> El Estado aporta B/. 300.00/mes del salario mínimo y la empresa asume la diferencia.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-black">✓</span>
+              <span><strong>Subsidio Estatal:</strong> El Estado aporta B/. 300.00/mes del salario mínimo y la empresa la diferencia.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-blue-400 font-bold">✓</span>
-              <span><strong>Seguro MITRADEL:</strong> MITRADEL otorga seguro colectivo contra accidentes laborales.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-black">✓</span>
+              <span><strong>Seguro MITRADEL:</strong> El Ministerio otorga seguro colectivo contra accidentes de trabajo.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-blue-400 font-bold">✓</span>
-              <span><strong>Incentivo Doble (2×):</strong> Si la empresa contrata al joven por 6 meses tras la pasantía, deduce el doble del salario.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-black">✓</span>
+              <span><strong>Incentivo Doble (2×):</strong> Si la empresa retiene al joven por 6 meses tras la práctica, deduce el doble del salario.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-blue-400 font-bold">✓</span>
-              <span><strong>Duración:</strong> 3 meses de pasantía inicial supervisada por MITRADEL.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-black">✓</span>
+              <span><strong>Duración:</strong> 3 meses de pasantía laboral inicial.</span>
             </li>
           </ul>
         </div>
 
-        <div class="mt-8 pt-5 border-t border-slate-800">
-          <a href={u('/legal#decreto27')} class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center justify-between group">
+        <div class="mt-8 pt-4 border-t border-slate-100">
+          <a href={u('/legal#decreto27')} class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center justify-between group">
             <span>Ver requisitos de Mi Primer Empleo</span>
             <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
@@ -108,41 +112,43 @@ const u = (path: string) => `${base}${path}`;
       </div>
 
       <!-- Vía 3: Práctica Profesional Curricular -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-lg">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-clean hover:shadow-clean-lg transition-all">
         <div>
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 flex items-center justify-center text-xl font-black mb-5">
+          <div class="w-11 h-11 rounded-2xl bg-slate-100 text-slate-800 border border-slate-200 flex items-center justify-center text-lg font-black mb-4">
             03
           </div>
-          <h3 class="text-xl font-bold text-white">Práctica Profesional Académica</h3>
-          <p class="mt-2 text-xs font-semibold text-indigo-400">Requisito Oficial de Graduación (UTP, UP, USMA, ULatina, UIP)</p>
+          <h3 class="text-xl font-bold text-slate-900 leading-snug">
+            Práctica Profesional Universitaria
+          </h3>
+          <p class="mt-1 text-xs font-semibold text-slate-600">Requisito Oficial de Graduación (UTP / UP / USMA)</p>
           
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-indigo-400 font-bold">✓</span>
-              <span><strong>Perfil:</strong> Estudiantes de último año o cuatrimestres finales con índice mínimo (1.00 a 1.80 UTP / 71 pts).</span>
+          <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-slate-800 font-black">✓</span>
+              <span><strong>Perfil:</strong> Universitarios de último año con índice académico habilitado para graduarse por práctica.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-indigo-400 font-bold">✓</span>
-              <span><strong>Convenio Formativo:</strong> Convenio tripartito (Universidad - Empresa - Estudiante). Sin relación laboral.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-slate-800 font-black">✓</span>
+              <span><strong>Sin Relación Laboral:</strong> Convenio tripartito (Universidad - Empresa - Estudiante).</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-indigo-400 font-bold">✓</span>
-              <span><strong>Remuneración Flexible:</strong> Estipendio libre pactado (desde B/. 0 hasta B/. 450+/mes de transporte y viáticos).</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-slate-800 font-black">✓</span>
+              <span><strong>Estipendio Formativo:</strong> Acordado entre las partes (ayuda de transporte de B/. 0 a B/. 450+).</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-indigo-400 font-bold">✓</span>
-              <span><strong>Duración Académica:</strong> UTP: 6 meses (130 días hábiles de 8h). UP: Mín. 16 semanas. ULatina/USMA: 400 horas.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-slate-800 font-black">✓</span>
+              <span><strong>Duración Curricular:</strong> UTP: 6 meses (130 jornadas); UP: 16 semanas; USMA/ULatina: 400 horas.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-indigo-400 font-bold">✓</span>
-              <span><strong>Evaluación en Sitio:</strong> Permite evaluar el desempeño real de futuros profesionales antes de una contratación fija.</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-slate-800 font-black">✓</span>
+              <span><strong>Supervisor Idóneo:</strong> Requiere firma de ingeniero, CPA o profesional colegiado en la empresa.</span>
             </li>
           </ul>
         </div>
 
-        <div class="mt-8 pt-5 border-t border-slate-800">
-          <a href={u('/kit-practica')} class="text-xs font-bold text-indigo-400 hover:text-indigo-300 flex items-center justify-between group">
-            <span>Descargar plantillas Gantt y cartas de práctica</span>
+        <div class="mt-8 pt-4 border-t border-slate-100">
+          <a href={u('/kit-practica')} class="text-xs font-bold text-slate-800 hover:text-slate-950 flex items-center justify-between group">
+            <span>Descargar modelos de convalidación</span>
             <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
@@ -151,33 +157,33 @@ const u = (path: string) => `${base}${path}`;
     </div>
 
     <!-- Regulación de Topes Ley 513 -->
-    <div class="mt-12 bg-slate-950/80 border border-slate-800 rounded-2xl p-6 sm:p-8">
+    <div class="mt-12 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
-          <h4 class="text-base font-bold text-white flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-            Topes Legales de Incorporación según Planilla de la Empresa (Ley 513)
+          <h4 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            Topes Legales de Incorporación de Pasantes según Planilla de la Empresa (Ley 513)
           </h4>
-          <p class="mt-2 text-xs sm:text-sm text-slate-400">
+          <p class="mt-1.5 text-xs sm:text-sm text-slate-600">
             La ley prohíbe taxativamente usar pasantes para reemplazar plazas ordinarias y fija topes estrictos:
           </p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3">
-            <p class="text-lg font-bold text-white">Hasta 2</p>
-            <p class="text-[10px] text-slate-400">Empresas 1 a 50 trab.</p>
+          <div class="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-clean">
+            <p class="text-xl font-black text-slate-900">Hasta 2</p>
+            <p class="text-[10px] text-slate-500 font-medium">1 a 50 empleados</p>
           </div>
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3">
-            <p class="text-lg font-bold text-white">Hasta 4</p>
-            <p class="text-[10px] text-slate-400">Empresas 51 a 100 trab.</p>
+          <div class="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-clean">
+            <p class="text-xl font-black text-slate-900">Hasta 4</p>
+            <p class="text-[10px] text-slate-500 font-medium">51 a 100 empleados</p>
           </div>
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3">
-            <p class="text-lg font-bold text-white">Hasta 6</p>
-            <p class="text-[10px] text-slate-400">Empresas 101 a 200 trab.</p>
+          <div class="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-clean">
+            <p class="text-xl font-black text-slate-900">Hasta 6</p>
+            <p class="text-[10px] text-slate-500 font-medium">101 a 200 empleados</p>
           </div>
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3">
-            <p class="text-lg font-bold text-white">Máx. 3%</p>
-            <p class="text-[10px] text-slate-400">Más de 200 trabajadores</p>
+          <div class="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-clean">
+            <p class="text-xl font-black text-slate-900">Máx. 3%</p>
+            <p class="text-[10px] text-slate-500 font-medium">> 200 empleados</p>
           </div>
         </div>
       </div>

@@ -9,26 +9,26 @@ import PactoFormadora from '../components/PactoFormadora.astro';
   activePage="publicar"
 >
   
-  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+  <div class="py-12 md:py-16 bg-white border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-3">
         Publicación Básica $0 Gratuita
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
         Publicar Vacante de Talento Universitario
       </h1>
-      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+      <p class="mt-3 text-base text-slate-600 leading-relaxed">
         Conecta directamente con estudiantes de último año de la UTP, UP, USMA y universidades de Panamá. Suscribe el Pacto de Empresa Formadora y recibe candidatos evaluados por potencial.
       </p>
     </div>
   </div>
 
-  <div class="py-12 md:py-20 bg-slate-950">
+  <div class="py-12 md:py-20 bg-slate-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Experience Guard Alert (Strict Anti-Experience Filter) -->
-      <div id="experiencia-warning" class="hidden mb-8 p-5 bg-rose-950/60 border-2 border-rose-500 rounded-2xl text-rose-200 text-xs sm:text-sm space-y-2">
-        <div class="flex items-center gap-2 font-bold text-rose-400 text-base">
+      <div id="experiencia-warning" class="hidden mb-8 p-5 bg-rose-50 border-2 border-rose-500 rounded-3xl text-rose-900 text-xs sm:text-sm space-y-2 shadow-clean">
+        <div class="flex items-center gap-2 font-black text-rose-700 text-base">
           <span>⚠️</span> Publicación Bloqueada por Infracción al Pacto
         </div>
         <p>
@@ -36,56 +36,56 @@ import PactoFormadora from '../components/PactoFormadora.astro';
         </p>
       </div>
 
-      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-clean-xl">
         
         <form id="form-publicar-vacante" class="space-y-6">
           
           <!-- Datos de la Empresa -->
-          <div class="border-b border-slate-800 pb-6 space-y-4">
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+          <div class="border-b border-slate-100 pb-6 space-y-4">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
               1. Identificación de la Empresa Formadora
             </h3>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre Comercial de la Empresa *</label>
-                <input type="text" required placeholder="Ej. Corporación ABC Panamá" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nombre Comercial de la Empresa *</label>
+                <input type="text" required placeholder="Ej. Corporación ABC Panamá" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">RUC / Cédula Jurídica *</label>
-                <input type="text" required placeholder="Ej. 1234567-1-987654 DV 00" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+                <label class="block text-xs font-bold text-slate-700 mb-1">RUC / Cédula Jurídica *</label>
+                <input type="text" required placeholder="Ej. 1234567-1-987654 DV 00" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Correo Electrónico de Contacto *</label>
-                <input type="email" required placeholder="reclutamiento@empresa.com.pa" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+                <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico de Contacto *</label>
+                <input type="email" required placeholder="reclutamiento@empresa.com.pa" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Teléfono / WhatsApp Corporativo *</label>
-                <input type="tel" required placeholder="+507 6000-0000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+                <label class="block text-xs font-bold text-slate-700 mb-1">Teléfono / WhatsApp Corporativo *</label>
+                <input type="tel" required placeholder="+507 6000-0000" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
               </div>
             </div>
           </div>
 
           <!-- Detalles de la Vacante -->
-          <div class="border-b border-slate-800 pb-6 space-y-4">
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          <div class="border-b border-slate-100 pb-6 space-y-4">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
               2. Detalles Formativos de la Oportunidad
             </h3>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Título de la Pasantía o Práctica *</label>
-              <input type="text" required placeholder="Ej. Pasante en Desarrollo Web y Automatización" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              <label class="block text-xs font-bold text-slate-700 mb-1">Título de la Pasantía o Práctica *</label>
+              <input type="text" required placeholder="Ej. Pasante en Desarrollo Web y Automatización" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Marco Legal Aplicable *</label>
-                <select required id="vacante-marco-legal" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Marco Legal Aplicable *</label>
+                <select required id="vacante-marco-legal" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white">
                   <option value="Ley 513">Ley 513 de Pasantías (B/. 450/mes deducible)</option>
                   <option value="Mi Primer Empleo">Programa Mi Primer Empleo (D.E. 27)</option>
                   <option value="Práctica Universitaria">Práctica Profesional de Graduación (UTP/UP/USMA)</option>
@@ -93,8 +93,8 @@ import PactoFormadora from '../components/PactoFormadora.astro';
                 </select>
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Área Funcional *</label>
-                <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Área Funcional *</label>
+                <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white">
                   <option value="Ingeniería & Software">Ingeniería & Software</option>
                   <option value="Finanzas & Contabilidad">Finanzas & Contabilidad</option>
                   <option value="Operaciones & Logística">Operaciones & Logística</option>
@@ -107,8 +107,8 @@ import PactoFormadora from '../components/PactoFormadora.astro';
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Provincia *</label>
-                <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Provincia *</label>
+                <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white">
                   <option value="Panamá">Ciudad de Panamá</option>
                   <option value="Panamá Oeste">Panamá Oeste</option>
                   <option value="Colón">Colón</option>
@@ -117,38 +117,38 @@ import PactoFormadora from '../components/PactoFormadora.astro';
                 </select>
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Remuneración Mensual *</label>
-                <input type="text" required value="B/. 450.00 / mes" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-emerald-400 font-bold focus:outline-none focus:border-blue-500" />
+                <label class="block text-xs font-bold text-slate-700 mb-1">Remuneración Mensual *</label>
+                <input type="text" required value="B/. 450.00 / mes" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-emerald-700 font-extrabold focus:outline-none focus:border-blue-600 focus:bg-white" />
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Cupos Disponibles *</label>
-                <input type="number" required min="1" max="10" value="2" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500" />
+                <label class="block text-xs font-bold text-slate-700 mb-1">Cupos Disponibles *</label>
+                <input type="number" required min="1" max="10" value="2" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white" />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Supervisor o Tutor Idóneo Responsable *</label>
-              <input type="text" required placeholder="Ej. Ing. Carlos Mendoza (Gerente de Operaciones, Idóneo UTP)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
-              <p class="text-[10px] text-slate-500 mt-1">Obligatorio según la Ley 513 y reglamentos de graduación universitaria.</p>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Supervisor o Tutor Idóneo Responsable *</label>
+              <input type="text" required placeholder="Ej. Ing. Carlos Mendoza (Gerente de Operaciones, Idóneo UTP)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
+              <p class="text-[10px] text-slate-400 mt-1">Obligatorio según la Ley 513 y reglamentos de graduación universitaria.</p>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Plan de Aprendizaje y Actividades a Desarrollar *</label>
-              <textarea required rows="3" placeholder="Describe brevemente qué habilidades aprenderá el estudiante y en qué proyectos colaborará..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"></textarea>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Plan de Aprendizaje y Actividades a Desarrollar *</label>
+              <textarea required rows="3" placeholder="Describe brevemente qué habilidades aprenderá el estudiante y en qué proyectos colaborará..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white"></textarea>
             </div>
 
             <!-- Conditional Experience Question (The Gatekeeper) -->
-            <div class="p-4 bg-slate-950 border border-slate-800 rounded-2xl space-y-2">
-              <label class="block text-xs font-bold text-white">
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+              <label class="block text-xs font-bold text-slate-900">
                 Filtro Anti-Experiencia: ¿Esta posición exige meses o años de experiencia laboral previa? *
               </label>
-              <div class="flex gap-4 text-xs text-slate-300">
+              <div class="flex gap-4 text-xs text-slate-700">
                 <label class="flex items-center gap-1.5 cursor-pointer">
-                  <input type="radio" name="exigeExp" value="no" checked id="exp-no" class="text-emerald-500 focus:ring-0" />
+                  <input type="radio" name="exigeExp" value="no" checked id="exp-no" class="text-slate-900 focus:ring-0" />
                   <span><strong>No, 0 experiencia.</strong> Estamos dispuestos a formar al joven desde cero.</span>
                 </label>
                 <label class="flex items-center gap-1.5 cursor-pointer">
-                  <input type="radio" name="exigeExp" value="si" id="exp-si" class="text-rose-500 focus:ring-0" />
+                  <input type="radio" name="exigeExp" value="si" id="exp-si" class="text-rose-600 focus:ring-0" />
                   <span>Sí, exigimos experiencia previa.</span>
                 </label>
               </div>
@@ -157,34 +157,34 @@ import PactoFormadora from '../components/PactoFormadora.astro';
           </div>
 
           <!-- Servicios Opcionales de Monetización Yappy / Tilopay -->
-          <div class="border-b border-slate-800 pb-6 space-y-3">
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+          <div class="border-b border-slate-100 pb-6 space-y-3">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
               3. Opciones de Visibilidad y Filtrado (Opcional)
             </h3>
 
             <div class="space-y-2">
-              <label class="flex items-start gap-3 p-3 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-slate-700">
-                <input type="checkbox" id="check-destacada" class="mt-0.5 rounded border-slate-700 bg-slate-900 text-amber-500" />
+              <label class="flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:border-slate-300">
+                <input type="checkbox" id="check-destacada" class="mt-0.5 rounded border-slate-300 text-slate-900" />
                 <div class="text-xs">
                   <div class="flex items-center gap-2">
-                    <span class="font-bold text-white">Destacar Vacante por 15 Días (+ B/. 15.00)</span>
-                    <span class="px-2 py-0.2 rounded text-[10px] font-bold bg-amber-400/10 text-amber-300 border border-amber-400/20">Alta Conversión</span>
+                    <span class="font-bold text-slate-900">Destacar Vacante por 15 Días (+ B/. 15.00)</span>
+                    <span class="px-2 py-0.2 rounded-full text-[10px] font-black bg-[#D4F634] text-slate-950">Alta Conversión</span>
                   </div>
-                  <p class="text-slate-400 text-[11px] mt-0.5">
+                  <p class="text-slate-500 text-[11px] mt-0.5">
                     Aparece fija en los primeros lugares de la vitrina y se difunde en los grupos universitarios de WhatsApp de la carrera.
                   </p>
                 </div>
               </label>
 
-              <label class="flex items-start gap-3 p-3 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-slate-700">
-                <input type="checkbox" id="check-shortlist" class="mt-0.5 rounded border-slate-700 bg-slate-900 text-blue-500" />
+              <label class="flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:border-slate-300">
+                <input type="checkbox" id="check-shortlist" class="mt-0.5 rounded border-slate-300 text-slate-900" />
                 <div class="text-xs">
                   <div class="flex items-center gap-2">
-                    <span class="font-bold text-white">Reporte "Top 10 Moldeables" con Video-Pitches (+ B/. 15.00)</span>
-                    <span class="px-2 py-0.2 rounded text-[10px] font-bold bg-blue-400/10 text-blue-300 border border-blue-400/20">Ahorro de Tiempo</span>
+                    <span class="font-bold text-slate-900">Reporte "Top 10 Moldeables" con Video-Pitches (+ B/. 15.00)</span>
+                    <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Ahorro de Tiempo</span>
                   </div>
-                  <p class="text-slate-400 text-[11px] mt-0.5">
+                  <p class="text-slate-500 text-[11px] mt-0.5">
                     Recibe una lista curada de los 10 mejores estudiantes con su prueba de inglés EF SET, arquetipo RIASEC y video-pitch de 60 segundos listos para entrevistar.
                   </p>
                 </div>
@@ -193,9 +193,9 @@ import PactoFormadora from '../components/PactoFormadora.astro';
           </div>
 
           <!-- Firma Digital del Pacto -->
-          <div class="p-4 bg-slate-950 border border-emerald-500/30 rounded-2xl space-y-3">
-            <label class="flex items-start gap-2.5 text-xs text-slate-300 cursor-pointer">
-              <input type="checkbox" required class="mt-0.5 rounded border-slate-700 bg-slate-900 text-emerald-500 focus:ring-0" />
+          <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl space-y-2">
+            <label class="flex items-start gap-2.5 text-xs text-slate-700 cursor-pointer">
+              <input type="checkbox" required class="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-0" />
               <span>
                 <strong>Acepto y suscribo el Pacto de Empresa Formadora:</strong> Me comprometo formalmente a no exigir experiencia previa a los postulantes, designar un tutor idóneo y garantizar la transparencia del estipendio formativo.
               </span>
@@ -205,27 +205,27 @@ import PactoFormadora from '../components/PactoFormadora.astro';
           <button 
             type="submit" 
             id="btn-publicar"
-            class="w-full py-4 rounded-xl text-sm font-bold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.01]"
+            class="w-full py-4 rounded-full text-sm font-extrabold bg-slate-900 hover:bg-[#002B7F] text-white shadow-clean transition-all active:scale-[0.98]"
           >
             Publicar Vacante Inmediata ($0 Gratuita)
           </button>
 
-          <p class="text-center text-[11px] text-slate-500">
+          <p class="text-center text-[11px] text-slate-400">
             Conforme al Artículo 22 del Código de Trabajo y la Resolución DM-136-2023 de MITRADEL.
           </p>
 
         </form>
 
         <div id="publicacion-success" class="hidden text-center py-10 space-y-4">
-          <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-3xl font-bold">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto text-3xl font-black shadow-clean">
             ✓
           </div>
-          <h3 class="text-2xl font-extrabold text-white">¡Vacante Publicada Exitosamente!</h3>
-          <p class="text-sm text-slate-300 max-w-md mx-auto">
-            Tu oferta ha sido agregada a la Vitrina de Vacantes Cero Experiencia y cuenta con el distintivo de <strong class="text-emerald-400">Empresa Formadora Verificada</strong>.
+          <h3 class="text-2xl font-black text-slate-950">¡Vacante Publicada Exitosamente!</h3>
+          <p class="text-sm text-slate-600 max-w-md mx-auto">
+            Tu oferta ha sido agregada a la Vitrina de Vacantes Cero Experiencia y cuenta con el distintivo de <strong class="text-emerald-700">Empresa Formadora Verificada</strong>.
           </p>
           <div class="pt-4">
-            <a href="/moldeo-panama/vacantes" class="px-6 py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700">
+            <a href="/moldeo-panama/vacantes" class="px-7 py-3 rounded-full text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors">
               Ver Vacante en la Vitrina →
             </a>
           </div>

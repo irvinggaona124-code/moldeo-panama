@@ -3,17 +3,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const u = (path: string) => `${base}${path}`;
 ---
 
-<div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden" id="test-riasec-wrapper">
+<div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-clean-xl relative overflow-hidden" id="test-riasec-wrapper">
   
   <div class="max-w-3xl mb-8">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold uppercase tracking-wider mb-3">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold uppercase tracking-wider mb-3">
       Anti-CV de Potencial
     </div>
-    <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+    <h3 class="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
       Test Vocacional de Moldeabilidad (Modelo O*NET RIASEC)
     </h3>
-    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
-      En lugar de un currículum tradicional con hojas en blanco, este test de 5 minutos evalúa tus intereses reales de trabajo y te asigna una etiqueta vocacional estandarizada para que las empresas conozcan en qué área florecerás.
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+      Sustituye la hoja en blanco de tu CV por una evaluación científica de tus fortalezas. En 5 minutos descubrirás tu arquetipo profesional para conectarte con empresas que buscan formarte en Panamá.
     </p>
   </div>
 
@@ -22,22 +22,22 @@ const u = (path: string) => `${base}${path}`;
     
     <!-- Progress Bar -->
     <div class="space-y-2">
-      <div class="flex justify-between text-xs text-slate-400 font-medium">
+      <div class="flex justify-between text-xs text-slate-500 font-semibold">
         <span>Progreso de la evaluación</span>
-        <span id="progress-text" class="text-blue-400 font-bold">Pregunta 1 de 10</span>
+        <span id="progress-text" class="text-slate-900 font-bold">Pregunta 1 de 10</span>
       </div>
-      <div class="w-full bg-slate-950 h-2.5 rounded-full overflow-hidden border border-slate-800">
-        <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-emerald-500 h-full w-[10%] transition-all duration-300"></div>
+      <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden border border-slate-200">
+        <div id="progress-bar" class="bg-slate-900 h-full w-[10%] transition-all duration-300"></div>
       </div>
     </div>
 
     <!-- Question Card -->
-    <div id="question-card" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
+    <div id="question-card" class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 space-y-6">
       <div>
-        <span id="question-category" class="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+        <span id="question-category" class="text-[11px] font-bold uppercase tracking-wider text-blue-700">
           Situación Profesional
         </span>
-        <h4 id="question-text" class="text-lg sm:text-xl font-bold text-white mt-1 leading-snug">
+        <h4 id="question-text" class="text-lg sm:text-xl font-bold text-slate-950 mt-1 leading-snug">
           ¿Qué tipo de actividad disfrutarías más realizar en tu primera pasantía?
         </h4>
       </div>
@@ -49,37 +49,37 @@ const u = (path: string) => `${base}${path}`;
     </div>
 
     <!-- Results Card (Hidden Initially) -->
-    <div id="results-card" class="hidden bg-slate-950 border-2 border-emerald-500/50 rounded-2xl p-6 sm:p-8 space-y-6 text-center">
-      <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto text-3xl font-black">
+    <div id="results-card" class="hidden bg-slate-50 border-2 border-emerald-500 rounded-3xl p-6 sm:p-8 space-y-6 text-center">
+      <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center mx-auto text-3xl font-black shadow-clean">
         🎓
       </div>
 
       <div>
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">
           Tu Arquetipo de Moldeabilidad Calculado
         </span>
-        <h4 id="result-title" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+        <h4 id="result-title" class="text-2xl sm:text-3xl font-black text-slate-950 mt-1">
           Investigador / Analítico (I)
         </h4>
-        <p id="result-percentage" class="text-base font-bold text-blue-400 mt-1">
+        <p id="result-percentage" class="text-base font-bold text-blue-700 mt-1">
           94% de Afinidad con Resolución de Problemas y Datos
         </p>
       </div>
 
-      <p id="result-description" class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+      <p id="result-description" class="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
         Tienes una mente estructurada, curiosa y con alta capacidad para absorber nuevos métodos de trabajo, analizar patrones y dominar herramientas técnicas con mínima supervisión.
       </p>
 
       <!-- Badge Code for Student Form -->
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 max-w-md mx-auto text-left">
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 max-w-md mx-auto text-left shadow-clean">
         <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
           Código de Etiqueta para tu Registro:
         </p>
         <div class="flex items-center justify-between gap-2">
-          <code id="result-code" class="text-xs text-emerald-400 font-mono font-bold bg-slate-950 px-2 py-1 rounded border border-slate-800">
+          <code id="result-code" class="text-xs text-slate-900 font-mono font-bold bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
             RIASEC-INV-94
           </code>
-          <button id="copy-badge-btn" class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white transition-colors">
+          <button id="copy-badge-btn" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-900 hover:bg-[#002B7F] text-white transition-all active:scale-[0.98]">
             Copiar Código
           </button>
         </div>
@@ -88,11 +88,11 @@ const u = (path: string) => `${base}${path}`;
       <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
         <a 
           href={u('/registro-estudiante')} 
-          class="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition-all"
+          class="w-full sm:w-auto px-7 py-3 rounded-full text-xs font-extrabold bg-[#D4F634] hover:bg-[#bce022] text-slate-950 shadow-clean transition-all active:scale-[0.98]"
         >
           Pegar Código en mi Registro de Estudiante →
         </a>
-        <button id="restart-test-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300">
+        <button id="restart-test-btn" class="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-200">
           Repetir Evaluación
         </button>
       </div>
@@ -249,10 +249,10 @@ const u = (path: string) => `${base}${path}`;
     q.options.forEach((opt) => {
       const btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'w-full text-left p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500 hover:bg-slate-800/80 transition-all text-xs sm:text-sm text-slate-200 font-medium flex items-center justify-between group';
+      btn.className = 'w-full text-left p-4 rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover:bg-slate-100/50 transition-all text-xs sm:text-sm text-slate-800 font-semibold flex items-center justify-between group shadow-clean';
       btn.innerHTML = `
         <span>${opt.text}</span>
-        <span class="text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all">→</span>
+        <span class="text-slate-400 group-hover:text-slate-900 group-hover:translate-x-1 transition-all">→</span>
       `;
       btn.addEventListener('click', () => {
         scores[opt.trait]++;
@@ -272,7 +272,6 @@ const u = (path: string) => `${base}${path}`;
     questionCard.classList.add('hidden');
     resultsCard.classList.remove('hidden');
 
-    // Find highest score
     const entries = Object.entries(scores) as ['R' | 'I' | 'A' | 'S' | 'E' | 'C', number][];
     entries.sort((a, b) => b[1] - a[1]);
     const topTrait = entries[0][0];
@@ -341,6 +340,5 @@ const u = (path: string) => `${base}${path}`;
     renderQuestion();
   });
 
-  // Start
   renderQuestion();
 </script>

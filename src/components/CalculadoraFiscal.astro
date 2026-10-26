@@ -3,34 +3,32 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const u = (path: string) => `${base}${path}`;
 ---
 
-<div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden" id="calculadora-fiscal">
-  <!-- Glow effect -->
-  <div class="absolute -top-24 -right-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+<div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-clean-xl relative overflow-hidden" id="calculadora-fiscal">
+  
   <div class="max-w-3xl mb-8">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-3">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-3">
       Simulador Financiero DGI & MITRADEL
     </div>
-    <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-      Calculadora Interactiva de Ahorro Fiscal (Ley 513 vs Contratación Tradicional)
+    <h3 class="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+      Calculadora Interactiva de Ahorro Fiscal (Ley 513 de Pasantías)
     </h3>
-    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
-      Calcula en tiempo real cuánto ahorra tu empresa en Panamá al incorporar talento universitario bajo el marco de la Ley 513 de 2026 frente al costo de una contratación laboral con cargas patronales de la Caja de Seguro Social (CSS).
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+      Compara en tiempo real el costo laboral de una contratación tradicional en Panamá frente al régimen formativo de la Ley 513 de 2026, con 0% de cargas patronales de la CSS y 100% de deducibilidad en el Impuesto sobre la Renta.
     </p>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     
     <!-- Controls (Left Col 5) -->
-    <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-2xl p-6 space-y-6">
+    <div class="lg:col-span-5 bg-slate-50 border border-slate-200/90 rounded-2xl p-6 space-y-6">
       
       <!-- Pasantes Slider -->
       <div>
         <div class="flex justify-between items-center mb-2">
-          <label for="input-pasantes" class="text-xs font-bold text-slate-200 uppercase tracking-wider">
+          <label for="input-pasantes" class="text-xs font-bold text-slate-700 uppercase tracking-wider">
             Cantidad de Pasantes:
           </label>
-          <span id="label-pasantes" class="text-base font-extrabold text-emerald-400 font-mono">
+          <span id="label-pasantes" class="text-sm font-black text-slate-900 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-clean">
             2 jóvenes
           </span>
         </div>
@@ -40,9 +38,9 @@ const u = (path: string) => `${base}${path}`;
           min="1" 
           max="10" 
           value="2" 
-          class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+          class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-slate-900"
         />
-        <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+        <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-medium">
           <span>1 (PyME)</span>
           <span>5</span>
           <span>10 (Corporativo)</span>
@@ -52,10 +50,10 @@ const u = (path: string) => `${base}${path}`;
       <!-- Duración Meses Slider -->
       <div>
         <div class="flex justify-between items-center mb-2">
-          <label for="input-meses" class="text-xs font-bold text-slate-200 uppercase tracking-wider">
+          <label for="input-meses" class="text-xs font-bold text-slate-700 uppercase tracking-wider">
             Duración del Programa:
           </label>
-          <span id="label-meses" class="text-base font-extrabold text-blue-400 font-mono">
+          <span id="label-meses" class="text-sm font-black text-blue-800 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-clean">
             6 meses
           </span>
         </div>
@@ -66,9 +64,9 @@ const u = (path: string) => `${base}${path}`;
           max="12" 
           step="1"
           value="6" 
-          class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
+          class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-700"
         />
-        <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+        <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-medium">
           <span>3 meses (Mínimo)</span>
           <span>6 meses (UTP)</span>
           <span>12 meses (Tope Ley)</span>
@@ -77,19 +75,19 @@ const u = (path: string) => `${base}${path}`;
 
       <!-- Tasa ISR Corporativa -->
       <div>
-        <label for="input-isr" class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+        <label for="input-isr" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
           Tasa Impuesto sobre la Renta (DGI):
         </label>
-        <select id="input-isr" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500">
+        <select id="input-isr" class="w-full bg-white border border-slate-200/90 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-slate-800 focus:outline-none focus:border-blue-600 shadow-clean">
           <option value="0.25">25% (Régimen General Panamá - PyMEs y Grandes Empresas)</option>
           <option value="0.15">15% (Régimen Especial PyME hasta $200k)</option>
           <option value="0.05">5% (Sedes de Empresas Multinacionales SEM)</option>
         </select>
       </div>
 
-      <div class="pt-2 text-[11px] text-slate-400 space-y-1 border-t border-slate-800">
+      <div class="pt-2 text-[11px] text-slate-500 space-y-1 border-t border-slate-200">
         <p>• Asignación Ley 513: <strong>B/. 450.00 / mes</strong> (exenta de CSS y SE).</p>
-        <p>• Contratación Ordinaria: Salario base B/. 600.00 + 32.6% de cargas patronales.</p>
+        <p>• Régimen Ordinario: Salario base B/. 600.00 + 32.6% de cargas patronales.</p>
       </div>
 
     </div>
@@ -98,15 +96,15 @@ const u = (path: string) => `${base}${path}`;
     <div class="lg:col-span-7 space-y-6">
       
       <!-- Big Savings Callout Card -->
-      <div class="bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-900 border-2 border-emerald-500/40 rounded-2xl p-6 sm:p-8 text-center relative shadow-xl">
-        <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">
-          Ahorro Neto Total Estimado para la Empresa
-        </p>
-        <p id="total-ahorro-neto" class="text-4xl sm:text-5xl font-black text-white mt-2 font-mono tracking-tight">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 text-center text-white relative shadow-clean-lg">
+        <span class="inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#D4F634] text-slate-950 mb-2">
+          Ahorro Neto Estimado para la Empresa
+        </span>
+        <p id="total-ahorro-neto" class="text-4xl sm:text-5xl font-black text-white font-mono tracking-tight">
           B/. 3,576.96
         </p>
-        <p class="mt-2 text-xs text-slate-400">
-          En comparación con contratar bajo régimen laboral tradicional con cargas de CSS patronal y décimo tercer mes.
+        <p class="mt-2 text-xs text-slate-400 max-w-md mx-auto">
+          En comparación directa con contratar bajo contrato laboral regular con cargas de la Caja de Seguro Social (CSS), Seguro Educativo y XIII Mes.
         </p>
       </div>
 
@@ -114,33 +112,33 @@ const u = (path: string) => `${base}${path}`;
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
         <!-- Tarjeta Tradicional -->
-        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Contrato Regular</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 font-bold border border-rose-500/20">Con CSS</span>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+            <span class="text-xs font-bold text-slate-600 uppercase tracking-wider">Contrato Regular</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold border border-rose-200">Con CSS</span>
           </div>
-          <div class="space-y-1.5 text-xs text-slate-300">
+          <div class="space-y-1.5 text-xs text-slate-600">
             <div class="flex justify-between">
-              <span class="text-slate-400">Salario Bruto Total:</span>
-              <span id="trad-salario" class="font-mono text-white font-semibold">B/. 7,200.00</span>
+              <span>Salario Bruto Total:</span>
+              <span id="trad-salario" class="font-mono text-slate-900 font-bold">B/. 7,200.00</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-400">Cargas CSS Patronal (12.25%):</span>
-              <span id="trad-css" class="font-mono text-rose-400 font-semibold">B/. 882.00</span>
+              <span>Cargas CSS (12.25%):</span>
+              <span id="trad-css" class="font-mono text-rose-600 font-semibold">B/. 882.00</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-400">Seguro Educativo (1.50%):</span>
-              <span id="trad-se" class="font-mono text-rose-400 font-semibold">B/. 108.00</span>
+              <span>Seguro Educativo (1.50%):</span>
+              <span id="trad-se" class="font-mono text-rose-600 font-semibold">B/. 108.00</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-400">XIII Mes & Prestaciones:</span>
-              <span id="trad-prestaciones" class="font-mono text-rose-400 font-semibold">B/. 1,254.48</span>
+              <span>XIII Mes & Prestaciones:</span>
+              <span id="trad-prestaciones" class="font-mono text-rose-600 font-semibold">B/. 1,254.48</span>
             </div>
-            <div class="flex justify-between text-emerald-400 border-t border-slate-800 pt-1.5">
+            <div class="flex justify-between text-emerald-700 border-t border-slate-200 pt-1.5 font-semibold">
               <span>Deducción ISR (DGI):</span>
-              <span id="trad-deduccion" class="font-mono font-semibold">- B/. 2,361.12</span>
+              <span id="trad-deduccion" class="font-mono">- B/. 2,361.12</span>
             </div>
-            <div class="flex justify-between text-sm font-bold border-t border-slate-800 pt-2 text-white">
+            <div class="flex justify-between text-sm font-extrabold border-t border-slate-200 pt-2 text-slate-950">
               <span>Costo Neto Final:</span>
               <span id="trad-costo-neto" class="font-mono">B/. 7,083.36</span>
             </div>
@@ -148,33 +146,33 @@ const u = (path: string) => `${base}${path}`;
         </div>
 
         <!-- Tarjeta Ley 513 Pasantía -->
-        <div class="bg-slate-950 border-2 border-emerald-500/40 rounded-2xl p-5 space-y-3 shadow-lg">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Ley 513 Pasantía</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40">Exento CSS</span>
+        <div class="bg-white border-2 border-emerald-500 rounded-2xl p-5 space-y-3 shadow-clean">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Ley 513 Pasantía</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-extrabold border border-emerald-200">Exento CSS</span>
           </div>
-          <div class="space-y-1.5 text-xs text-slate-300">
+          <div class="space-y-1.5 text-xs text-slate-600">
             <div class="flex justify-between">
-              <span class="text-slate-400">Asignación Total ($450/m):</span>
-              <span id="ley-asignacion" class="font-mono text-white font-semibold">B/. 5,400.00</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-400">Cargas CSS Patronal:</span>
-              <span class="font-mono text-emerald-400 font-bold">B/. 0.00 (Exento)</span>
+              <span>Asignación ($450/m):</span>
+              <span id="ley-asignacion" class="font-mono text-slate-900 font-bold">B/. 5,400.00</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-400">Seguro Educativo:</span>
-              <span class="font-mono text-emerald-400 font-bold">B/. 0.00 (Exento)</span>
+              <span>Cargas CSS Patronal:</span>
+              <span class="font-mono text-emerald-700 font-bold">B/. 0.00 (Exento)</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-400">Póliza Privada Accidentes:</span>
-              <span id="ley-poliza" class="font-mono text-slate-300 font-semibold">B/. 180.00</span>
+              <span>Seguro Educativo:</span>
+              <span class="font-mono text-emerald-700 font-bold">B/. 0.00 (Exento)</span>
             </div>
-            <div class="flex justify-between text-emerald-400 border-t border-slate-800 pt-1.5">
-              <span>Deducción ISR 100% (DGI):</span>
-              <span id="ley-deduccion" class="font-mono font-semibold">- B/. 1,395.00</span>
+            <div class="flex justify-between">
+              <span>Póliza Privada Accidentes:</span>
+              <span id="ley-poliza" class="font-mono text-slate-700 font-semibold">B/. 180.00</span>
             </div>
-            <div class="flex justify-between text-sm font-bold border-t border-slate-800 pt-2 text-emerald-400">
+            <div class="flex justify-between text-emerald-700 border-t border-slate-100 pt-1.5 font-semibold">
+              <span>Deducción ISR 100%:</span>
+              <span id="ley-deduccion" class="font-mono">- B/. 1,395.00</span>
+            </div>
+            <div class="flex justify-between text-sm font-extrabold border-t border-slate-100 pt-2 text-emerald-800">
               <span>Costo Neto Final:</span>
               <span id="ley-costo-neto" class="font-mono">B/. 4,185.00</span>
             </div>
@@ -184,13 +182,13 @@ const u = (path: string) => `${base}${path}`;
       </div>
 
       <!-- Action Footer -->
-      <div class="p-4 bg-slate-950 border border-slate-800 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-        <span class="text-slate-400">
-          ¿Deseas incorporar talento bajo este régimen legal?
+      <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <span class="text-slate-600 font-medium">
+          ¿Deseas incorporar pasantes bajo este régimen legal?
         </span>
         <a 
           href={u('/publicar')} 
-          class="px-4 py-2 rounded-lg font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors whitespace-nowrap"
+          class="px-5 py-2.5 rounded-full font-bold bg-slate-900 hover:bg-[#002B7F] text-white transition-all active:scale-[0.98] whitespace-nowrap shadow-clean"
         >
           Publicar Vacante con Ley 513 ($0) →
         </a>
@@ -238,10 +236,10 @@ const u = (path: string) => `${base}${path}`;
 
     // Costo Tradicional (Salario B/. 600)
     const salarioBaseMes = 600;
-    const cssPatronalMes = salarioBaseMes * 0.1225; // 73.50
-    const sePatronalMes = salarioBaseMes * 0.015;   // 9.00
-    const prestacionesMes = salarioBaseMes * 0.1742; // Decimo (8.33%) + Vacaciones/Cesantia (9.09%) = 104.52
-    const costoBrutoTradMes = salarioBaseMes + cssPatronalMes + sePatronalMes + prestacionesMes; // 787.02
+    const cssPatronalMes = salarioBaseMes * 0.1225;
+    const sePatronalMes = salarioBaseMes * 0.015;
+    const prestacionesMes = salarioBaseMes * 0.1742;
+    const costoBrutoTradMes = salarioBaseMes + cssPatronalMes + sePatronalMes + prestacionesMes;
     
     const tradSalarioTotal = salarioBaseMes * n * m;
     const tradCssTotal = cssPatronalMes * n * m;
@@ -253,8 +251,8 @@ const u = (path: string) => `${base}${path}`;
 
     // Costo Ley 513 (Asignación B/. 450 fija)
     const asignacionMes = 450;
-    const polizaMes = 15; // Seguro privado de accidentes
-    const costoBrutoLeyMes = asignacionMes + polizaMes; // 465.00
+    const polizaMes = 15;
+    const costoBrutoLeyMes = asignacionMes + polizaMes;
     
     const leyAsignacionTotal = asignacionMes * n * m;
     const leyPolizaTotal = polizaMes * n * m;

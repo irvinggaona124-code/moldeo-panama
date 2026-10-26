@@ -12,108 +12,108 @@ const listaCandidatos = limite ? candidatos.slice(0, limite) : candidatos;
 <div class="space-y-8" id="candidatos-container">
   
   <!-- Privacy & Regulatory Badge -->
-  <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-lg">
+  <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-clean">
+    <div class="flex items-center gap-3.5">
+      <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-center text-lg shrink-0">
         🛡️
       </div>
       <div>
-        <p class="text-xs font-bold text-white uppercase tracking-wider">Cumplimiento Ley 81 de 2019 (ANTAI)</p>
-        <p class="text-xs text-slate-400">
-          Directorio anonimizado de talentos universitarios pre-evaluados. Nombre, celular y correo permanecen protegidos hasta la validación de la empresa formadora.
+        <p class="text-xs font-black text-slate-900 uppercase tracking-wider">Cumplimiento Ley 81 de 2019 (ANTAI)</p>
+        <p class="text-xs text-slate-600">
+          Directorio anonimizado de talentos pre-evaluados. Nombre, celular y correo permanecen custodiados hasta la solicitud de la empresa formadora.
         </p>
       </div>
     </div>
-    <div class="text-xs text-slate-400 whitespace-nowrap bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
-      ⚡ Desbloqueo vía Yappy Comercial: <strong class="text-emerald-400">B/. 15.00</strong>
+    <div class="text-xs font-semibold text-slate-700 whitespace-nowrap bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+      ⚡ Desbloqueo vía Yappy Comercial: <strong class="text-emerald-700">B/. 15.00</strong>
     </div>
   </div>
 
   <!-- Candidates Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {listaCandidatos.map((c) => (
-      <article class="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-xl hover:shadow-emerald-950/20 group">
+      <article class="bg-white border border-slate-200 hover:border-slate-300 rounded-3xl p-6 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-clean-xl group">
         <div>
           <!-- Candidate Header Badge -->
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
-            <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-slate-800 text-blue-300 border border-slate-700">
+          <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-900 border border-slate-200">
               {c.codigoAnonimo}
             </span>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-[#D4F634] text-slate-950">
               {c.riasecAfinidad}% Moldeable
             </span>
           </div>
 
           <!-- Major & University -->
-          <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug">
+          <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
             {c.carrera}
           </h3>
-          <p class="text-xs text-slate-400 mt-1 font-medium">{c.universidad}</p>
-          <p class="text-[11px] text-slate-500">{c.sede} · {c.cuatrimestre}</p>
+          <p class="text-xs font-semibold text-slate-600 mt-1">{c.universidad}</p>
+          <p class="text-[11px] text-slate-400">{c.sede} · {c.cuatrimestre}</p>
 
           <!-- Core Attributes (Academic GPA, EF SET, RIASEC) -->
           <div class="mt-4 space-y-2 text-xs">
             
-            <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-              <span class="text-slate-400">Índice Académico:</span>
-              <span class="font-bold text-white font-mono">{c.indiceAcademico}</span>
+            <div class="p-2.5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+              <span class="text-slate-500 font-medium">Índice Académico:</span>
+              <span class="font-extrabold text-slate-900 font-mono">{c.indiceAcademico}</span>
             </div>
 
-            <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-              <span class="text-slate-400">Inglés Verificable EF SET:</span>
-              <span class="font-bold text-emerald-400">{c.efSetScore}</span>
+            <div class="p-2.5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+              <span class="text-slate-500 font-medium">Inglés Verificable EF SET:</span>
+              <span class="font-bold text-blue-700">{c.efSetScore}</span>
             </div>
 
-            <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-              <span class="text-slate-400">Perfil Vocacional RIASEC:</span>
-              <span class="font-semibold text-blue-300">{c.perfilRiasec}</span>
+            <div class="p-2.5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+              <span class="text-slate-500 font-medium">Perfil Vocacional RIASEC:</span>
+              <span class="font-bold text-slate-800">{c.perfilRiasec}</span>
             </div>
 
           </div>
 
           <!-- Featured University Project -->
-          <div class="mt-4 pt-3 border-t border-slate-800/80">
-            <p class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+          <div class="mt-4 pt-3.5 border-t border-slate-100">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
               Proyecto Destacado (Anti-CV):
             </p>
-            <p class="text-xs font-semibold text-slate-200 truncate">{c.proyectoDestacadoTitulo}</p>
-            <p class="text-[11px] text-slate-400 line-clamp-2 mt-0.5">{c.proyectoDestacadoDescripcion}</p>
+            <p class="text-xs font-bold text-slate-800 truncate">{c.proyectoDestacadoTitulo}</p>
+            <p class="text-[11px] text-slate-500 line-clamp-2 mt-0.5">{c.proyectoDestacadoDescripcion}</p>
           </div>
 
           <!-- Key Skills -->
           <div class="mt-3 flex flex-wrap gap-1">
             {c.competenciasClave.map((skill) => (
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[10px] font-medium">
+              <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 text-[10px] font-medium">
                 {skill}
               </span>
             ))}
           </div>
 
           <!-- Video-Pitch Status -->
-          <div class="mt-3 flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+          <div class="mt-3.5 flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
             </svg>
-            <span>Video-Pitch Vertical de {c.videoPitchDuracion}</span>
+            <span>Video-Pitch Vertical ({c.videoPitchDuracion})</span>
           </div>
 
         </div>
 
         <!-- Action / Unlock Button -->
-        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-          <div class="text-[11px] text-slate-500">
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div class="text-[11px] text-slate-400 font-medium">
             <span>{c.disponibilidad}</span>
           </div>
           <button 
             type="button" 
-            class="open-modal-desbloqueo px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/20 transition-all hover:scale-105 flex items-center gap-1.5"
+            class="open-modal-desbloqueo px-4 py-2 rounded-full text-xs font-extrabold bg-slate-900 hover:bg-[#002B7F] text-white shadow-clean hover:shadow transition-all active:scale-[0.98] flex items-center gap-1.5"
             data-codigo={c.codigoAnonimo}
             data-carrera={c.carrera}
             data-uni={c.universidad}
             data-ingles={c.efSetScore}
             data-indice={c.indiceAcademico}
           >
-            <span>🔓 Desbloquear Contacto</span>
+            <span>🔓 Desbloquear</span>
           </button>
         </div>
       </article>
@@ -123,72 +123,72 @@ const listaCandidatos = limite ? candidatos.slice(0, limite) : candidatos;
 </div>
 
 <!-- Modal de Desbloqueo B2B Yappy Comercial -->
-<div id="modal-desbloqueo" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-  <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-left">
+<div id="modal-desbloqueo" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-left">
     
-    <button id="close-modal-desbloqueo" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg">
+    <button id="close-modal-desbloqueo" class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 p-1.5 rounded-full hover:bg-slate-100">
       <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
 
     <div class="text-center mb-6">
-      <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto text-xl mb-3">
+      <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center mx-auto text-xl mb-3 shadow-clean">
         🔓
       </div>
-      <h3 class="text-lg font-bold text-white">Desbloqueo de Perfil y Video-Pitch</h3>
-      <p class="text-xs text-slate-400 mt-1">
-        Candidato <span id="modal-candidato-codigo" class="font-mono text-emerald-400 font-bold">#CAND</span>
+      <h3 class="text-lg font-black text-slate-950">Desbloqueo de Perfil y Video-Pitch</h3>
+      <p class="text-xs text-slate-500 mt-1">
+        Candidato <span id="modal-candidato-codigo" class="font-mono text-blue-700 font-bold">#CAND</span>
       </p>
     </div>
 
-    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2 text-xs text-slate-300 mb-6">
+    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2 text-xs text-slate-700 mb-6">
       <div class="flex justify-between">
-        <span class="text-slate-400">Servicio B2B:</span>
-        <span class="font-medium text-white">Reporte y Acceso Directo</span>
+        <span class="text-slate-500">Servicio B2B:</span>
+        <span class="font-bold text-slate-900">Reporte y Acceso Directo</span>
       </div>
       <div class="flex justify-between">
-        <span class="text-slate-400">Datos Incluidos:</span>
-        <span class="font-medium text-white">WhatsApp, Correo, Video 60s, EF SET URL</span>
+        <span class="text-slate-500">Datos Incluidos:</span>
+        <span class="font-semibold text-slate-900">WhatsApp, Correo, Video 60s, EF SET URL</span>
       </div>
-      <div class="flex justify-between border-t border-slate-800 pt-2 text-sm font-bold">
+      <div class="flex justify-between border-t border-slate-200 pt-2 text-sm font-extrabold">
         <span>Total a Pagar:</span>
-        <span class="text-emerald-400">B/. 15.00</span>
+        <span class="text-emerald-700 font-mono">B/. 15.00</span>
       </div>
     </div>
 
     <!-- Pasarela de Pago Yappy Comercial -->
     <div class="space-y-4">
-      <div class="bg-blue-950/40 border border-blue-500/30 rounded-xl p-4 text-center">
-        <p class="text-xs font-bold text-white flex items-center justify-center gap-1.5 mb-2">
+      <div class="bg-blue-50/60 border border-blue-200 rounded-2xl p-4 text-center">
+        <p class="text-xs font-bold text-slate-900 flex items-center justify-center gap-1.5 mb-1.5">
           <span>💙</span> Pagar al instante con Yappy Comercial
         </p>
-        <p class="text-[11px] text-slate-400">
+        <p class="text-[11px] text-slate-600">
           Abre tu App de Banco General o Yappy y busca nuestro directorio comercial:
         </p>
-        <p class="text-base font-black text-amber-400 font-mono tracking-wider mt-1">
+        <p class="text-base font-black text-slate-950 font-mono tracking-wider mt-1 bg-white px-3 py-1 rounded-full border border-blue-100 inline-block">
           @moldeopanama
         </p>
-        <p class="text-[10px] text-slate-500 mt-1">Monto: B/. 15.00 · En descripción escribe el código del candidato</p>
+        <p class="text-[10px] text-slate-400 mt-1">Monto: B/. 15.00 · En descripción escribe el código del candidato</p>
       </div>
 
       <form id="form-confirmar-yappy" class="space-y-3">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre de tu Empresa / Reclutador *</label>
-          <input type="text" required placeholder="Ej. Empresa ABC Panamá" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
+          <label class="block text-xs font-bold text-slate-700 mb-1">Nombre de la Empresa / Reclutador *</label>
+          <input type="text" required placeholder="Ej. Empresa ABC Panamá" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Correo Electrónico Corporativo *</label>
-          <input type="email" required placeholder="rrhh@empresa.com.pa" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
+          <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico Corporativo *</label>
+          <input type="email" required placeholder="rrhh@empresa.com.pa" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white" />
         </div>
-        <button type="submit" class="w-full py-2.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/30 transition-all">
+        <button type="submit" class="w-full py-2.5 rounded-full text-xs font-extrabold bg-slate-900 hover:bg-[#002B7F] text-white shadow-clean transition-all active:scale-[0.98]">
           Confirmar Pago y Recibir Acceso
         </button>
       </form>
 
       <div id="desbloqueo-success" class="hidden text-center py-4 space-y-2">
-        <p class="text-sm font-bold text-emerald-400">¡Solicitud recibida!</p>
-        <p class="text-xs text-slate-300">
+        <p class="text-sm font-bold text-emerald-700">¡Solicitud recibida!</p>
+        <p class="text-xs text-slate-600">
           Hemos verificado la orden. Te hemos remitido por correo los datos de contacto directo y el video-pitch del estudiante.
         </p>
       </div>

@@ -17,7 +17,7 @@ const u = (path: string) => `${base}${path}`;
 
 const {
   title,
-  description = 'Moldeo Panamá: Portal de empleo exclusivo para estudiantes universitarios sin experiencia previa. Pasantías Ley 513 (B/. 450/mes deducible), Mi Primer Empleo y Prácticas Profesionales UTP, UP y USMA.',
+  description = 'Moldeo Panamá: Plataforma de talento universitario cero experiencia en Panamá. Pasantías Ley 513 (B/. 450/mes deducible), Mi Primer Empleo y Prácticas Profesionales UTP, UP y USMA.',
   image = '/og-image.png',
   canonicalUrl = Astro.url.href,
   activePage = 'home',
@@ -40,7 +40,7 @@ const defaultSchema = {
 ---
 
 <!doctype html>
-<html lang="es-PA" class="scroll-smooth dark">
+<html lang="es-PA" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,7 +51,7 @@ const defaultSchema = {
     <title>{title} | Moldeo Panamá</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="keywords" content="empleo panama sin experiencia, pasantias panama ley 513, practica profesional utp, primer empleo panama, practicantes universitarios panama, mi primer empleo mitradel, carreras tecnicas panama, talento joven panama" />
+    <meta name="keywords" content="empleo panama sin experiencia, pasantias panama ley 513, practica profesional utp, primer empleo panama, practicantes universitarios panama, mi primer empleo mitradel, talento joven panama, talento cero experiencia" />
     <meta name="author" content="Moldeo Panamá" />
     <meta name="robots" content="index, follow" />
 
@@ -70,15 +70,31 @@ const defaultSchema = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 
-    <!-- Preconnect Fonts -->
+    <!-- Typography: Inter Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Reduced Motion Global Guard -->
+    <style is:global>
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      ::selection {
+        background-color: #D4F634;
+        color: #0F172A;
+      }
+    </style>
 
     <!-- Schema.org JSON-LD -->
     <JsonLd schema={schema || defaultSchema} />
   </head>
-  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <body class="bg-[#F8FAFC] text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-[#D4F634] selection:text-slate-900 overflow-x-hidden">
     <Header activePage={activePage} />
     
     <main class="flex-grow">

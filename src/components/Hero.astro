@@ -3,117 +3,206 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const u = (path: string) => `${base}${path}`;
 ---
 
-<section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
-  <!-- Background Glow & Decorative Elements -->
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-  <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+<section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-slate-50/50">
+  <!-- Subtle ambient radial lights -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-tr from-blue-100/40 via-emerald-100/30 to-amber-100/20 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
-    <!-- Tagline Badge -->
-    <div class="flex justify-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs text-slate-300 shadow-sm backdrop-blur-sm">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="font-semibold text-emerald-400">Pasantías Ley 513 Sancionada</span>
-        <span class="text-slate-500">|</span>
-        <span>0 Meses de Experiencia Exigida</span>
+    <!-- Hero Status Pill -->
+    <div class="flex justify-center mb-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-sm hover:border-slate-300 transition-colors">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-bold text-slate-900">Ley 513 de Pasantías en vigor</span>
+        <span class="text-slate-300">|</span>
+        <span class="text-slate-600">B/. 450.00/mes 100% deducible y 0% cargas CSS</span>
       </div>
     </div>
 
     <!-- Main Headings -->
-    <div class="mt-6 text-center max-w-4xl mx-auto">
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-        El Portal Exclusivo para Talento Universitario <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">Cero Experiencia</span> en Panamá
+    <div class="text-center max-w-4xl mx-auto">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+        El talento universitario que tu empresa necesita, <span class="underline decoration-[#D4F634] decoration-wavy decoration-2 underline-offset-8">sin experiencia previa</span>.
       </h1>
-      
-      <p class="mt-6 text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal max-w-3xl mx-auto">
-        Conectamos a estudiantes de la <strong class="text-white font-semibold">UTP, UP, USMA y universidades de Panamá</strong> con empresas dispuestas a moldear talento desde cero. Sin filtros por historial laboral previo, con incentivos de ahorro fiscal y estipendios de hasta <strong class="text-emerald-400 font-semibold">B/. 450.00 libres de cargas de Seguro Social</strong>.
+
+      <p class="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Conectamos a estudiantes de la <strong class="text-slate-900 font-semibold">UTP, UP, USMA y universidades de Panamá</strong> con empresas dispuestas a formarlos desde cero. Reemplazamos el currículum vacío por pruebas reales de potencial, inglés EF SET verificable y estipendios protegidos por la ley.
       </p>
 
-      <!-- Primary Action CTAs -->
-      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <!-- CTA Buttons -->
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5">
         <a 
           href={u('/vacantes')} 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-600 text-white shadow-lg shadow-blue-600/30 hover:shadow-blue-600/40 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm bg-slate-900 hover:bg-[#002B7F] text-white shadow-clean-md hover:shadow-clean-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
         >
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          Explorar 30 Vacantes Verificadas
+          <span>Explorar 30 Vacantes Verificadas</span>
+          <span class="text-[#D4F634] group-hover:translate-x-1 transition-transform">→</span>
         </a>
 
         <a 
           href={u('/talento-moldeable')} 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm bg-slate-800 hover:bg-slate-700/80 text-slate-200 border border-slate-700 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+          class="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-sm bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 shadow-clean transition-all active:scale-[0.98] flex items-center justify-center gap-2"
         >
-          <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-          </svg>
-          Directorio de Talento Moldeable
+          <span>Directorio de Candidatos Anti-CV</span>
         </a>
 
         <a 
           href={u('/publicar')} 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+          class="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-sm bg-[#D4F634] hover:bg-[#bce022] text-slate-950 shadow-clean transition-all active:scale-[0.98] flex items-center justify-center gap-2"
         >
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-          </svg>
-          Publicar Vacante Gratis ($0)
+          <span>Publicar Vacante $0</span>
         </a>
       </div>
 
-      <!-- Trust highlights -->
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400">
+      <!-- Micro Guarantees -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-slate-500">
         <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          100% Gratuito para Estudiantes (Art. 22 C. de Trabajo)
+          100% Gratuito para Estudiantes (Art. 22 C. Trabajo)
         </span>
         <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
           Protección de Datos Garantizada (Ley 81 ANTAI)
         </span>
         <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          Validación Oficial EF SET & RIASEC
+          Inglés Certificado EF SET
         </span>
       </div>
 
     </div>
 
-    <!-- Macro Metrics Cards (Datos Reales INEC 2025/2026) -->
-    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-      
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center shadow-lg hover:border-slate-700 transition-colors">
-        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">113,347</p>
-        <p class="mt-1 text-xs sm:text-sm font-semibold text-rose-400">Jóvenes Desocupados en Panamá</p>
-        <p class="mt-1 text-[11px] text-slate-500">Tasa de 19.9% juvenil (INEC 2025/26)</p>
-      </div>
+    <!-- Modern Clean SaaS Bento Preview -->
+    <div class="mt-14 max-w-6xl mx-auto bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-clean-xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        
+        <!-- Bento Col 1: Macro Metrics -->
+        <div class="lg:col-span-4 bg-slate-50/70 border border-slate-100 rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Mercado Panamá 2026</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center shadow-lg hover:border-slate-700 transition-colors">
-        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">193,773</p>
-        <p class="mt-1 text-xs sm:text-sm font-semibold text-blue-400">Universitarios Matriculados</p>
-        <p class="mt-1 text-[11px] text-slate-500">60.3% en UP y UTP (INEC 2024/25)</p>
-      </div>
+          <div class="space-y-3">
+            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-clean">
+              <p class="text-2xl font-black text-slate-900 tracking-tight">113,347</p>
+              <p class="text-xs font-semibold text-rose-600">Jóvenes desocupados en Panamá</p>
+              <p class="text-[10px] text-slate-400">19.9% desempleo juvenil (INEC)</p>
+            </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center shadow-lg hover:border-slate-700 transition-colors">
-        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">0 Meses</p>
-        <p class="mt-1 text-xs sm:text-sm font-semibold text-emerald-400">Experiencia Previa Exigida</p>
-        <p class="mt-1 text-[11px] text-slate-500">Pacto estricto de empresa formadora</p>
-      </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-clean">
+              <p class="text-2xl font-black text-slate-900 tracking-tight">193,773</p>
+              <p class="text-xs font-semibold text-blue-700">Universitarios activos</p>
+              <p class="text-[10px] text-slate-400">60.3% en UP y UTP (INEC 2024/25)</p>
+            </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center shadow-lg hover:border-slate-700 transition-colors">
-        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">B/. 450</p>
-        <p class="mt-1 text-xs sm:text-sm font-semibold text-amber-400">Asignación Ley 513</p>
-        <p class="mt-1 text-[11px] text-slate-500">100% Deducible de ISR, sin CSS patronal</p>
-      </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-clean flex items-center justify-between">
+              <div>
+                <p class="text-lg font-black text-emerald-600">B/. 450.00 / mes</p>
+                <p class="text-[11px] font-semibold text-slate-600">Estipendio Ley 513</p>
+              </div>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#D4F634] text-slate-950">
+                0% CSS
+              </span>
+            </div>
+          </div>
+        </div>
 
+        <!-- Bento Col 2: Live Vacancy Interactive Card Sample -->
+        <div class="lg:col-span-4 bg-white border border-slate-200 rounded-2xl p-5 shadow-clean hover:shadow-clean-lg transition-all space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+              Ley 513 de Pasantías
+            </span>
+            <span class="text-xs text-slate-400 font-mono">B/. 450/mes</span>
+          </div>
+
+          <div class="flex items-center gap-3 pt-1">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-xl">
+              🛵
+            </div>
+            <div>
+              <p class="text-xs font-bold text-slate-900">PedidosYa Panamá</p>
+              <p class="text-[11px] text-slate-500">Costa del Este · PeYantías</p>
+            </div>
+          </div>
+
+          <h4 class="text-sm font-bold text-slate-900 leading-snug">
+            Pasante en Análisis de Datos y Business Intelligence
+          </h4>
+
+          <div class="flex flex-wrap gap-1 text-[10px] text-slate-600">
+            <span class="px-2 py-0.5 rounded bg-slate-100">UTP</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100">UP</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100">0 Exp.</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100">Tutor Idóneo</span>
+          </div>
+
+          <div class="pt-2">
+            <a href={u('/vacantes')} class="w-full block text-center py-2 rounded-full text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors">
+              Postularme con Perfil Moldeable →
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Col 3: Anti-CV Profile Sample -->
+        <div class="lg:col-span-4 bg-slate-50/70 border border-slate-100 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-slate-800">#CAND-UTP-402</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+              94% Moldeable
+            </span>
+          </div>
+
+          <div class="space-y-1">
+            <p class="text-xs font-bold text-slate-900">Lic. en Ingeniería de Software</p>
+            <p class="text-[11px] text-slate-500">UTP Campus Central · 8.° Cuatrimestre</p>
+          </div>
+
+          <div class="space-y-1.5 text-xs">
+            <div class="flex justify-between bg-white p-2 rounded-lg border border-slate-200/60">
+              <span class="text-slate-500">Índice UTP:</span>
+              <span class="font-bold text-slate-900">2.42 / 3.00 (Honor)</span>
+            </div>
+            <div class="flex justify-between bg-white p-2 rounded-lg border border-slate-200/60">
+              <span class="text-slate-500">Inglés EF SET:</span>
+              <span class="font-bold text-blue-700">C1 Avanzado (69/100)</span>
+            </div>
+            <div class="flex justify-between bg-white p-2 rounded-lg border border-slate-200/60">
+              <span class="text-slate-500">Video-Pitch:</span>
+              <span class="font-bold text-emerald-700">✓ 58s Verificado</span>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <a href={u('/talento-moldeable')} class="w-full block text-center py-2 rounded-full text-xs font-bold bg-white hover:bg-slate-100 text-slate-900 border border-slate-200 transition-colors">
+              Desbloquear Perfil (B/. 15 Yappy)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Supported Universities Logos / Badges -->
+    <div class="mt-12 text-center">
+      <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-4">
+        Conectando estudiantes de las principales casas de estudio de Panamá
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-semibold text-slate-600">
+        <span class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-clean">Universidad Tecnológica de Panamá (UTP)</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-clean">Universidad de Panamá (UP)</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-clean">USMA</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-clean">Universidad Latina</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-clean">UNACHI</span>
+        <span class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-clean">ITSE</span>
+      </div>
     </div>
 
   </div>
