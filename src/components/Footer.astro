@@ -1,0 +1,104 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const u = (path: string) => `${base}${path}`;
+---
+
+<footer class="bg-slate-950 text-slate-400 border-t border-slate-850 pt-16 pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+      
+      <!-- Col 1: Brand & Mission -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href={u('/')} class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-emerald-500 flex items-center justify-center text-white shadow-md">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white">
+            Moldeo<span class="text-emerald-400">.pa</span>
+          </span>
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          La primera plataforma de Panamá diseñada para eliminar la barrera del "CV vacío". Conectamos a universitarios sin experiencia laboral previa con empresas dispuestas a formarlos bajo la <strong class="text-slate-200">Ley 513 de Pasantías</strong> y convenios académicos de graduación.
+        </p>
+        <div class="pt-2 flex items-center gap-3 text-xs text-slate-500">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">
+            🇵🇦 República de Panamá
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">
+            Presupuesto $0 Inicial
+          </span>
+        </div>
+      </div>
+
+      <!-- Col 2: Para Universitarios -->
+      <div class="space-y-3">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-200">Para Estudiantes</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href={u('/vacantes')} class="hover:text-emerald-400 transition-colors">Vacantes Cero Experiencia</a></li>
+          <li><a href={u('/registro-estudiante')} class="hover:text-emerald-400 transition-colors">Crear Perfil Moldeable</a></li>
+          <li><a href={u('/test-vocacional')} class="hover:text-emerald-400 transition-colors">Test Vocacional RIASEC</a></li>
+          <li><a href={u('/kit-practica')} class="hover:text-emerald-400 transition-colors">Plantillas de Práctica (Gantt)</a></li>
+          <li><a href="https://www.efset.org/es/ef-set-50/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors inline-flex items-center gap-1">Certificado EF SET ↗</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Para Empresas -->
+      <div class="space-y-3">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-200">Para Empresas</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href={u('/publicar')} class="hover:text-emerald-400 transition-colors">Publicar Vacante Gratis ($0)</a></li>
+          <li><a href={u('/talento-moldeable')} class="hover:text-emerald-400 transition-colors">Directorio de Moldeables</a></li>
+          <li><a href={u('/calculadora-fiscal')} class="hover:text-emerald-400 transition-colors">Calculadora Ahorro Ley 513</a></li>
+          <li><a href={u('/empresas')} class="hover:text-emerald-400 transition-colors">Pacto de Empresa Formadora</a></li>
+          <li><a href={u('/empresas#yappy')} class="hover:text-emerald-400 transition-colors">Monetización Yappy Comercial</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Marco Regulatorio & Legal -->
+      <div class="space-y-3">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-200">Marco Legal Panamá</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href={u('/legal#articulo22')} class="hover:text-emerald-400 transition-colors">Art. 22 Código de Trabajo</a></li>
+          <li><a href={u('/legal#ley513')} class="hover:text-emerald-400 transition-colors">Ley 513 de Pasantías (2026)</a></li>
+          <li><a href={u('/legal#decreto27')} class="hover:text-emerald-400 transition-colors">Mi Primer Empleo (D.E. 27)</a></li>
+          <li><a href={u('/legal#ley81')} class="hover:text-emerald-400 transition-colors">Privacidad Ley 81 (ANTAI)</a></li>
+          <li><a href={u('/arco')} class="text-emerald-400 font-medium hover:underline">Canal de Derechos ARCO</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Ecosistema Académico Nacional -->
+    <div class="py-8 border-b border-slate-850">
+      <p class="text-xs text-center text-slate-400 font-semibold uppercase tracking-wider mb-4">
+        Diseñado para la comunidad universitaria de Panamá
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-400 font-medium">
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">Universidad Tecnológica de Panamá (UTP)</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">Universidad de Panamá (UP)</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">USMA</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">Universidad Latina</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">UNACHI</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">UDELAS</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">ITSE</span>
+        <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-800">UMIP</span>
+      </div>
+    </div>
+
+    <!-- Legal Disclaimer Notice (Art 22 & Ley 81) -->
+    <div class="pt-8 text-xs text-slate-400 space-y-3 leading-relaxed">
+      <p>
+        <strong class="text-slate-400">Descargo Legal de Operación (República de Panamá):</strong> Moldeo Panamá opera como un directorio tecnológico publicitario, informativo y de vinculación formativa entre el sector productivo y la comunidad universitaria. Conforme al <strong class="text-slate-400">Artículo 22 del Código de Trabajo</strong> (subrogado por la Ley No. 44 de 1995) y la Resolución DM-136-2023 de MITRADEL, esta plataforma <strong class="text-slate-400">no es una Agencia Privada de Colocación</strong> de empleo ni empleador; no cobra comisión alguna ni arancel a los trabajadores o estudiantes por su registro, postulación o colocación.
+      </p>
+      <p>
+        <strong class="text-slate-400">Cumplimiento de Privacidad:</strong> En estricto apego a la <strong class="text-slate-400">Ley 81 de 26 de marzo de 2019</strong> y el Decreto Ejecutivo No. 285 de 2021 de Protección de Datos Personales fiscalizado por la ANTAI, los datos de los estudiantes solo son transferidos a empresas verificadas con su consentimiento previo, expreso e informado. Los usuarios pueden solicitar en cualquier momento el Acceso, Rectificación, Cancelación u Oposición a través de nuestro <a href={u('/arco')} class="text-emerald-400 underline">Canal de Derechos ARCO</a> gratuito.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-between text-slate-400 gap-2">
+        <p>© 2026 Moldeo Panamá. Todos los derechos reservados. Desarrollado con Presupuesto $0.</p>
+        <p class="text-[11px]">Banco General Yappy Comercial · Tilopay · EF SET · O*NET RIASEC</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VacantesGrid from '../components/VacantesGrid.astro';
+import { vacantes } from '../data/vacantes';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Vacantes Cero Experiencia y Pasantías Ley 513 en Panamá',
+  description: 'Catálogo de pasantías y prácticas profesionales en Panamá con 0 meses de experiencia previa exigida.',
+  itemListElement: vacantes.map((v, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    item: {
+      '@type': 'JobPosting',
+      title: v.titulo,
+      description: v.descripcionCorta,
+      datePosted: v.fechaPublicacion,
+      employmentType: 'INTERN',
+      hiringOrganization: {
+        '@type': 'Organization',
+        name: v.empresa,
+      },
+      jobLocation: {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          addressRegion: v.provincia,
+          addressCountry: 'PA',
+        },
+      },
+      baseSalary: {
+        '@type': 'MonetaryAmount',
+        currency: 'PAB',
+        value: {
+          '@type': 'QuantitativeValue',
+          value: v.remuneracionValor,
+          unitText: 'MONTH',
+        },
+      },
+    },
+  })),
+};
+---
+
+<Layout 
+  title="Vacantes Cero Experiencia y Pasantías Ley 513 en Panamá"
+  description="Explora 30 vacantes verificadas de pasantías y prácticas profesionales en Panamá. UTP, UP, USMA, multinacionales SEM y empresas formadoras."
+  activePage="vacantes"
+  schema={pageSchema}
+>
+  
+  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        30 Vacantes Verificadas en Panamá
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Vitrina de Vacantes Cero Experiencia
+      </h1>
+      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+        Todas las oportunidades publicadas han firmado el <strong class="text-white">Pacto de Empresa Formadora</strong>: sin exigencia de experiencia previa, con tutor idóneo asignado y bajo el marco legal de la Ley 513 o convalidación universitaria.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-12 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <VacantesGrid mostrarFiltrosCompletos={true} />
+    </div>
+  </div>
+
+</Layout>

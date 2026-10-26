@@ -1,0 +1,346 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const u = (path: string) => `${base}${path}`;
+---
+
+<div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden" id="test-riasec-wrapper">
+  
+  <div class="max-w-3xl mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold uppercase tracking-wider mb-3">
+      Anti-CV de Potencial
+    </div>
+    <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+      Test Vocacional de Moldeabilidad (Modelo O*NET RIASEC)
+    </h3>
+    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+      En lugar de un currículum tradicional con hojas en blanco, este test de 5 minutos evalúa tus intereses reales de trabajo y te asigna una etiqueta vocacional estandarizada para que las empresas conozcan en qué área florecerás.
+    </p>
+  </div>
+
+  <!-- Test Container -->
+  <div id="riasec-app" class="space-y-6">
+    
+    <!-- Progress Bar -->
+    <div class="space-y-2">
+      <div class="flex justify-between text-xs text-slate-400 font-medium">
+        <span>Progreso de la evaluación</span>
+        <span id="progress-text" class="text-blue-400 font-bold">Pregunta 1 de 10</span>
+      </div>
+      <div class="w-full bg-slate-950 h-2.5 rounded-full overflow-hidden border border-slate-800">
+        <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-emerald-500 h-full w-[10%] transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Question Card -->
+    <div id="question-card" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
+      <div>
+        <span id="question-category" class="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          Situación Profesional
+        </span>
+        <h4 id="question-text" class="text-lg sm:text-xl font-bold text-white mt-1 leading-snug">
+          ¿Qué tipo de actividad disfrutarías más realizar en tu primera pasantía?
+        </h4>
+      </div>
+
+      <!-- Options -->
+      <div id="options-container" class="space-y-3">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Results Card (Hidden Initially) -->
+    <div id="results-card" class="hidden bg-slate-950 border-2 border-emerald-500/50 rounded-2xl p-6 sm:p-8 space-y-6 text-center">
+      <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto text-3xl font-black">
+        🎓
+      </div>
+
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">
+          Tu Arquetipo de Moldeabilidad Calculado
+        </span>
+        <h4 id="result-title" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+          Investigador / Analítico (I)
+        </h4>
+        <p id="result-percentage" class="text-base font-bold text-blue-400 mt-1">
+          94% de Afinidad con Resolución de Problemas y Datos
+        </p>
+      </div>
+
+      <p id="result-description" class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Tienes una mente estructurada, curiosa y con alta capacidad para absorber nuevos métodos de trabajo, analizar patrones y dominar herramientas técnicas con mínima supervisión.
+      </p>
+
+      <!-- Badge Code for Student Form -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 max-w-md mx-auto text-left">
+        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+          Código de Etiqueta para tu Registro:
+        </p>
+        <div class="flex items-center justify-between gap-2">
+          <code id="result-code" class="text-xs text-emerald-400 font-mono font-bold bg-slate-950 px-2 py-1 rounded border border-slate-800">
+            RIASEC-INV-94
+          </code>
+          <button id="copy-badge-btn" class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white transition-colors">
+            Copiar Código
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a 
+          href={u('/registro-estudiante')} 
+          class="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition-all"
+        >
+          Pegar Código en mi Registro de Estudiante →
+        </a>
+        <button id="restart-test-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300">
+          Repetir Evaluación
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  interface Question {
+    category: string;
+    text: string;
+    options: {
+      text: string;
+      trait: 'R' | 'I' | 'A' | 'S' | 'E' | 'C';
+    }[];
+  }
+
+  const questions: Question[] = [
+    {
+      category: "Resolución de Problemas",
+      text: "Ante un proyecto nuevo en la empresa, ¿cuál de estas tareas te generaría mayor satisfacción?",
+      options: [
+        { text: "Analizar los datos y encontrar la causa raíz del problema con números y gráficos.", trait: "I" },
+        { text: "Trabajar con las herramientas físicas, equipos o configurar los sistemas técnicos en sitio.", trait: "R" },
+        { text: "Diseñar la presentación visual, el concepto o la propuesta creativa para comunicarlo.", trait: "A" },
+        { text: "Organizar las tablas, los cronogramas en Excel y verificar que todo cumpla las normativas.", trait: "C" },
+      ]
+    },
+    {
+      category: "Estilo de Trabajo",
+      text: "¿En qué tipo de ambiente te visualizas aprendiendo con mayor rapidez?",
+      options: [
+        { text: "Entrevistando usuarios, escuchando sus necesidades y apoyando en su inducción.", trait: "S" },
+        { text: "Liderando una reunión de avance, defendiendo ideas y negociando prioridades.", trait: "E" },
+        { text: "Investigando a fondo una tecnología o método nuevo de forma autodidacta.", trait: "I" },
+        { text: "Elaborando reportes contables exactos, balances y conciliaciones sin errores.", trait: "C" },
+      ]
+    },
+    {
+      category: "Herramientas Preferidas",
+      text: "Si te dieran un día libre para dominar una herramienta digital, ¿cuál elegirías?",
+      options: [
+        { text: "Python, SQL o Power BI para modelar bases de datos complejas.", trait: "I" },
+        { text: "Figma, Illustrator o edición audiovisual para contenidos y experiencias de usuario.", trait: "A" },
+        { text: "AutoCAD, SolidWorks o plataformas de supervisión de maquinaria y redes.", trait: "R" },
+        { text: "CRM comercial, herramientas de prospección y técnicas de cierre de ventas.", trait: "E" },
+      ]
+    },
+    {
+      category: "Interacción con Personas",
+      text: "¿Cómo prefieres relacionarte con tu equipo durante tu primera práctica?",
+      options: [
+        { text: "Facilitando la colaboración, resolviendo conflictos interpersonales y apoyando a compañeros.", trait: "S" },
+        { text: "Presentando resultados ejecutivos y motivando al grupo a superar las metas del mes.", trait: "E" },
+        { text: "Concentrado en resolver retos lógicos complejos con sesiones puntuales de feedback.", trait: "I" },
+        { text: "Asegurando que los entregables sigan estrictamente las fechas del diagrama de Gantt.", trait: "C" },
+      ]
+    },
+    {
+      category: "Reacción a Imprevistos",
+      text: "Si ocurre un error en un proceso operativo, ¿cuál es tu primer impulso?",
+      options: [
+        { text: "Desarmar el flujo paso a paso hasta encontrar la variable que falló.", trait: "I" },
+        { text: "Poner manos a la obra de inmediato para reparar el daño técnico en el terreno.", trait: "R" },
+        { text: "Proponer una solución visual o alternativa ingeniosa fuera de la caja.", trait: "A" },
+        { text: "Revisar el manual de procedimientos y actualizar el checklist para evitar reincidencias.", trait: "C" },
+      ]
+    },
+    {
+      category: "Motivación Principal",
+      text: "¿Qué reconocimiento al final de tus 6 meses de práctica te haría sentir más orgulloso?",
+      options: [
+        { text: "'Gracias a tu investigación descubrimos una oportunidad que nos ahorró miles de balboas'.", trait: "I" },
+        { text: "'Tu campaña visual y mensaje captó la atención de miles de nuevos usuarios'.", trait: "A" },
+        { text: "'Transformaste el clima del equipo y siempre estuviste dispuesto a orientar a los demás'.", trait: "S" },
+        { text: "'Tu puntualidad, orden y precisión en los números fueron impecables'.", trait: "C" },
+      ]
+    },
+    {
+      category: "Toma de Decisiones",
+      text: "Para tomar una decisión importante en el trabajo, te apoyas prioritariamente en:",
+      options: [
+        { text: "Evidencia estadística, datos empíricos y modelos lógicos demostrables.", trait: "I" },
+        { text: "Pruebas prácticas directas: armar un prototipo rápido y probarlo con las manos.", trait: "R" },
+        { text: "El impacto emocional y cómo afectará el bienestar de las personas involucradas.", trait: "S" },
+        { text: "El beneficio estratégico de negocio y las oportunidades comerciales para crecer.", trait: "E" },
+      ]
+    },
+    {
+      category: "Proyectos Universitarios",
+      text: "En tus trabajos universitarios de graduación, solías asumir con naturalidad el rol de:",
+      options: [
+        { text: "El analista que redactaba la metodología científica y procesaba los datos.", trait: "I" },
+        { text: "El diseñador que estructuraba la presentación y cuidaba la estética del documento.", trait: "A" },
+        { text: "El coordinador que distribuía tareas y verificaba que nadie incumpliera el formato APA.", trait: "C" },
+        { text: "El expositor que salía al frente a defender el proyecto ante los jurados.", trait: "E" },
+      ]
+    },
+    {
+      category: "Lectura y Aprendizaje",
+      text: "¿Qué lectura o contenido en internet llama de inmediato tu atención?",
+      options: [
+        { text: "Artículos sobre descubrimientos científicos, algoritmos de IA y nuevas tecnologías.", trait: "I" },
+        { text: "Manuales de mecánica, diagramas de circuitos o cómo construir cosas prácticas.", trait: "R" },
+        { text: "Historias sobre cómo marcas icónicas construyeron su reputación y diseño.", trait: "A" },
+        { text: "Estrategias de finanzas personales, inversión y optimización fiscal corporativa.", trait: "C" },
+      ]
+    },
+    {
+      category: "Propósito Profesional",
+      text: "En una empresa formadora en Panamá, ¿en qué área consideras que dejarás tu mayor huella?",
+      options: [
+        { text: "Desarrollo tecnológico, ciencia de datos o ingeniería analítica.", trait: "I" },
+        { text: "Recursos humanos, gestión de talento, responsabilidad social y cultura.", trait: "S" },
+        { text: "Finanzas, auditoría contable, contraloría y logística estructurada.", trait: "C" },
+        { text: "Expansión comercial, nuevos negocios y relaciones estratégicas.", trait: "E" },
+      ]
+    }
+  ];
+
+  let currentQuestion = 0;
+  const scores: Record<'R' | 'I' | 'A' | 'S' | 'E' | 'C', number> = {
+    R: 0, I: 0, A: 0, S: 0, E: 0, C: 0
+  };
+
+  const questionCard = document.getElementById('question-card');
+  const resultsCard = document.getElementById('results-card');
+  const progressText = document.getElementById('progress-text');
+  const progressBar = document.getElementById('progress-bar');
+  const qCategory = document.getElementById('question-category');
+  const qText = document.getElementById('question-text');
+  const optionsContainer = document.getElementById('options-container');
+
+  const resTitle = document.getElementById('result-title');
+  const resPercentage = document.getElementById('result-percentage');
+  const resDesc = document.getElementById('result-description');
+  const resultCode = document.getElementById('result-code');
+  const copyBtn = document.getElementById('copy-badge-btn');
+  const restartBtn = document.getElementById('restart-test-btn');
+
+  function renderQuestion() {
+    if (!qText || !qCategory || !optionsContainer || !progressText || !progressBar) return;
+
+    const q = questions[currentQuestion];
+    progressText.textContent = `Pregunta ${currentQuestion + 1} de ${questions.length}`;
+    progressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+    qCategory.textContent = q.category;
+    qText.textContent = q.text;
+
+    optionsContainer.innerHTML = '';
+    q.options.forEach((opt) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'w-full text-left p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500 hover:bg-slate-800/80 transition-all text-xs sm:text-sm text-slate-200 font-medium flex items-center justify-between group';
+      btn.innerHTML = `
+        <span>${opt.text}</span>
+        <span class="text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all">→</span>
+      `;
+      btn.addEventListener('click', () => {
+        scores[opt.trait]++;
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          renderQuestion();
+        } else {
+          showResults();
+        }
+      });
+      optionsContainer.appendChild(btn);
+    });
+  }
+
+  function showResults() {
+    if (!questionCard || !resultsCard || !resTitle || !resPercentage || !resDesc || !resultCode) return;
+    questionCard.classList.add('hidden');
+    resultsCard.classList.remove('hidden');
+
+    // Find highest score
+    const entries = Object.entries(scores) as ['R' | 'I' | 'A' | 'S' | 'E' | 'C', number][];
+    entries.sort((a, b) => b[1] - a[1]);
+    const topTrait = entries[0][0];
+
+    const profiles: Record<'R' | 'I' | 'A' | 'S' | 'E' | 'C', { title: string; desc: string; code: string; affinity: string }> = {
+      I: {
+        title: "Investigador / Analítico (I)",
+        affinity: "94% de Afinidad con Resolución de Problemas y Datos",
+        desc: "Mente lógica y estructurada, ideal para puestos de desarrollo de software, análisis de datos, ingeniería de procesos o investigación de mercado.",
+        code: "RIASEC-INV-94"
+      },
+      R: {
+        title: "Realista / Técnico-Operativo (R)",
+        affinity: "92% de Afinidad con Ingeniería Práctica y Terreno",
+        desc: "Orientación natural hacia el trabajo práctico, diagnóstico de maquinaria, mantenimiento electromecánico, redes y supervisión en obra o planta.",
+        code: "RIASEC-REA-92"
+      },
+      A: {
+        title: "Artístico / Creativo (A)",
+        affinity: "95% de Afinidad con Diseño y Comunicación Visual",
+        desc: "Sensibilidad estética y pensamiento lateral, ideal para agencias creativas, diseño UX/UI, marketing digital y generación de contenidos de alto impacto.",
+        code: "RIASEC-ART-95"
+      },
+      S: {
+        title: "Social / Gestión de Personas (S)",
+        affinity: "93% de Afinidad con Relaciones Humanas y Bienestar",
+        desc: "Capacidad de escucha activa, empatía y trabajo colaborativo, altamente valorado en departamentos de recursos humanos, capacitación y atención al cliente.",
+        code: "RIASEC-SOC-93"
+      },
+      E: {
+        title: "Emprendedor / Liderazgo y Negocios (E)",
+        affinity: "91% de Afinidad con Estrategia Comercial y Metas",
+        desc: "Dinamismo, persuasión y visión de impacto, perfil idóneo para desarrollo de negocios, ventas corporativas B2B y gestión de proyectos comerciales.",
+        code: "RIASEC-EMP-91"
+      },
+      C: {
+        title: "Convencional / Estructura y Finanzas (C)",
+        affinity: "96% de Afinidad con Organización, NIIF y Procesos",
+        desc: "Precisión meticulosa, respeto por los procedimientos y alta habilidad numérica, perfecto para auditoría, contabilidad, finanzas y control de inventarios.",
+        code: "RIASEC-CON-96"
+      }
+    };
+
+    const p = profiles[topTrait];
+    resTitle.textContent = p.title;
+    resPercentage.textContent = p.affinity;
+    resDesc.textContent = p.desc;
+    resultCode.textContent = p.code;
+  }
+
+  copyBtn?.addEventListener('click', () => {
+    const code = resultCode?.textContent?.trim() || '';
+    navigator.clipboard.writeText(code).then(() => {
+      copyBtn.textContent = '¡Copiado!';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copiar Código';
+      }, 2000);
+    });
+  });
+
+  restartBtn?.addEventListener('click', () => {
+    currentQuestion = 0;
+    (Object.keys(scores) as ('R' | 'I' | 'A' | 'S' | 'E' | 'C')[]).forEach(k => scores[k] = 0);
+    resultsCard?.classList.add('hidden');
+    questionCard?.classList.remove('hidden');
+    renderQuestion();
+  });
+
+  // Start
+  renderQuestion();
+</script>

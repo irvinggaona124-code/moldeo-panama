@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CalculadoraFiscal from '../components/CalculadoraFiscal.astro';
+import TrianguloLegal from '../components/TrianguloLegal.astro';
+---
+
+<Layout 
+  title="Calculadora Fiscal Ley 513 de Pasantías en Panamá (Simulador DGI & MITRADEL)"
+  description="Calcula el ahorro fiscal y costo real de incorporar pasantes bajo la Ley 513 de 2026 frente a la contratación tradicional en Panamá."
+  activePage="calculadora"
+>
+  
+  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        100% Deducible de ISR · 0% CSS Patronal
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Simulador Fiscal y Financiero de Contratación Joven
+      </h1>
+      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+        Comprueba matemáticamente por qué la Ley 513 y los convenios de práctica profesional son la forma más eficiente y legal de formar talento joven en Panamá con cero pasivos laborales.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-12 md:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <CalculadoraFiscal />
+      <TrianguloLegal />
+    </div>
+  </div>
+
+</Layout>

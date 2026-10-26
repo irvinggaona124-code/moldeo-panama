@@ -1,0 +1,120 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const u = (path: string) => `${base}${path}`;
+---
+
+<div class="space-y-8" id="kit-recursos">
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Item 1: Plantilla Gantt UTP/UP -->
+    <div class="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+      <div>
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-2xl mb-4">
+          📊
+        </div>
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/30">
+          Plantilla Excel / Sheets
+        </span>
+        <h4 class="text-base font-bold text-white mt-2">
+          Cronograma de Actividades Gantt (UTP / UP / USMA)
+        </h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          Estructura pre-diseñada con semanas lectivas, objetivos formativos, firmas del tutor empresarial y desglose de las 130 jornadas (o 400 horas) exigidas para convalidar el Trabajo de Graduación.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-slate-800">
+        <a 
+          href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/copy" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-full block text-center py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 transition-colors"
+        >
+          Copiar Plantilla en Google Sheets ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Item 2: Modelo Carta de Aceptación -->
+    <div class="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+      <div>
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
+          📑
+        </div>
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+          Documento Editable Word / Docs
+        </span>
+        <h4 class="text-base font-bold text-white mt-2">
+          Modelo de Carta de Aceptación y Compromiso Empresarial
+        </h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          Redacción jurídica formal requerida por las coordinaciones de práctica universitaria (UTP formularios F1-F3, Decanatos de la UP y USMA), certificando supervisor idóneo y horario.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-slate-800">
+        <a 
+          href="https://docs.google.com/document/d/19Jh9aR8rV0q0iM8i9x0g_rW7c0hT5y5e6/copy" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-full block text-center py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 transition-colors"
+        >
+          Abrir Modelo en Google Docs ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Item 3: Guía Rápida Ley 513 -->
+    <div class="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+      <div>
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center text-2xl mb-4">
+          ⚖️
+        </div>
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/30">
+          Guía Legal de Bolsillo
+        </span>
+        <h4 class="text-base font-bold text-white mt-2">
+          Guía Ejecutiva de la Ley 513 de Pasantías (2026)
+        </h4>
+        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          Resumen práctico del Decreto Ejecutivo No. 1 de 31 de agosto de 2026: topes según tamaño de planilla, exención fiscal de CSS patronal, deducibilidad en DGI y modelo de póliza privada.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-slate-800">
+        <a 
+          href={u('/legal#ley513')} 
+          class="w-full block text-center py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition-colors"
+        >
+          Leer Guía Legal Completa →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Checklist Box -->
+  <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8">
+    <h4 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+      <span class="text-emerald-400">✓</span>
+      Checklist del Estudiante para Validar su Práctica de Graduación
+    </h4>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs text-slate-300">
+      <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 space-y-1">
+        <p class="font-bold text-white">1. Índice Académico</p>
+        <p class="text-slate-400 text-[11px]">Verificar índice mínimo requerido por tu facultad (ej. 1.00 a 1.80 UTP o 71 pts ULatina).</p>
+      </div>
+      <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 space-y-1">
+        <p class="font-bold text-white">2. Carta de Intención</p>
+        <p class="text-slate-400 text-[11px]">Solicitar la carta firmada por el representante legal o supervisor idóneo de la empresa.</p>
+      </div>
+      <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 space-y-1">
+        <p class="font-bold text-white">3. Póliza o Seguro</p>
+        <p class="text-slate-400 text-[11px]">Confirmar seguro de accidentes de la universidad o póliza privada patronal según Ley 513.</p>
+      </div>
+      <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 space-y-1">
+        <p class="font-bold text-white">4. Bitácoras F1-F3</p>
+        <p class="text-slate-400 text-[11px]">Registrar las horas y conseguir la firma periódica mensual del tutor asignado.</p>
+      </div>
+    </div>
+  </div>
+
+</div>

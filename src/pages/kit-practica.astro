@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import KitRecursos from '../components/KitRecursos.astro';
+---
+
+<Layout 
+  title="Kit de Práctica Profesional y Ley 513 de Pasantías en Panamá"
+  description="Descarga gratis plantillas de cronograma Gantt UTP, modelo de carta de aceptación empresarial y guía ejecutiva de la Ley 513 en Panamá."
+  activePage="kit"
+>
+  
+  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        Recursos Oficiales de Graduación
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Kit Oficial de Práctica Profesional y Ley 513
+      </h1>
+      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+        Todo el material administrativo y legal que necesitas para que tu práctica profesional sea aceptada por las coordinaciones de la UTP, UP, USMA, ULatina y UIP sin retrasos burocráticos.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-12 md:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <KitRecursos />
+    </div>
+  </div>
+
+</Layout>

@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestRiasec from '../components/TestRiasec.astro';
+---
+
+<Layout 
+  title="Crear Perfil de Moldeabilidad Universitario (Gratis) en Panamá"
+  description="Regístrate en Moldeo Panamá sin experiencia previa. Certifica tu inglés gratis con EF SET, descubre tu perfil RIASEC y sube tu video-pitch de 60 segundos."
+  activePage="registro"
+>
+  
+  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        100% Gratuito · Cero Experiencia Requerida
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Crea tu Perfil de Moldeabilidad (Anti-CV)
+      </h1>
+      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+        Cuando jamás has trabajado, un CV tradicional no te representa. En Moldeo Panamá sustituimos el papel en blanco por tus verdaderas fortalezas: tu índice universitario, tu nivel real de inglés y tu energía en un video de 60 segundos.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-12 md:py-20 bg-slate-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Stepper Guidance Box -->
+      <div class="mb-8 p-5 bg-slate-900 border border-slate-800 rounded-2xl grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+          <div>
+            <p class="font-bold text-white">Inglés EF SET Gratis</p>
+            <p class="text-slate-400 text-[11px] mt-0.5">Haz la prueba de 50 min en <a href="https://www.efset.org/es/ef-set-50/" target="_blank" class="text-blue-400 underline">efset.org</a> y copia tu URL.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+          <div>
+            <p class="font-bold text-white">Video-Pitch de 60s</p>
+            <p class="text-slate-400 text-[11px] mt-0.5">Grábate en video vertical presentándote y súbelo a YouTube oculto o Drive.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+          <div>
+            <p class="font-bold text-white">Test RIASEC</p>
+            <p class="text-slate-400 text-[11px] mt-0.5">Calcula tu código de aptitud vocacional en 5 minutos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        
+        <form id="form-registro-estudiante" class="space-y-6">
+          
+          <!-- Dimensión 1: Datos Académicos -->
+          <div class="border-b border-slate-800 pb-6 space-y-4">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+              1. Trazabilidad Académica Universitaria
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre Completo *</label>
+                <input type="text" required placeholder="Ej. Ana Lucía González" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Cédula de Identidad Personal *</label>
+                <input type="text" required placeholder="Ej. 8-954-1234" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Universidad Actual *</label>
+                <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500">
+                  <option value="">Selecciona tu universidad...</option>
+                  <option value="UTP">Universidad Tecnológica de Panamá (UTP)</option>
+                  <option value="UP">Universidad de Panamá (UP)</option>
+                  <option value="USMA">Universidad Católica Santa María La Antigua (USMA)</option>
+                  <option value="ULatina">Universidad Latina de Panamá</option>
+                  <option value="UIP">Universidad Interamericana de Panamá (UIP)</option>
+                  <option value="UNACHI">Universidad Autónoma de Chiriquí (UNACHI)</option>
+                  <option value="UDELAS">UDELAS</option>
+                  <option value="ITSE">Instituto Técnico Superior Especializado (ITSE)</option>
+                  <option value="UMIP">Universidad Marítima Internacional (UMIP)</option>
+                  <option value="Otra">Otra institución de educación superior</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Sede o Centro Regional *</label>
+                <input type="text" required placeholder="Ej. Campus Central / Panamá Oeste / Colón" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Carrera que Cursas *</label>
+                <input type="text" required placeholder="Ej. Ing. Industrial" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Año / Cuatrimestre *</label>
+                <input type="text" required placeholder="Ej. 4.° Año / Graduando" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Índice Académico (GPA) *</label>
+                <input type="text" required placeholder="Ej. 2.15 / 3.00 o 88/100" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Correo Electrónico *</label>
+                <input type="email" required placeholder="estudiante@correo.ac.pa" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Celular / WhatsApp *</label>
+                <input type="tel" required placeholder="+507 6000-0000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Dimensión 2: Certificación de Inglés & Evaluación -->
+          <div class="border-b border-slate-800 pb-6 space-y-4">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              2. Inglés Verificable EF SET & Arquetipo Vocacional
+            </h3>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">
+                URL Verificable del Certificado EF SET (50 Minutos) *
+              </label>
+              <input type="url" required placeholder="https://www.efset.org/cert/tu-codigo" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
+              <p class="text-[11px] text-slate-500 mt-1">
+                ¿Aún no lo tienes? Realiza la prueba gratuita oficial de 50 minutos en <a href="https://www.efset.org/es/ef-set-50/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 underline">efset.org/es/ef-set-50/</a>. No tiene costo y es el estándar exigido por las multinacionales SEM en Panamá.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Nivel Obtenido en EF SET *</label>
+                <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500">
+                  <option value="A1">A1 Principiante</option>
+                  <option value="A2">A2 Elemental</option>
+                  <option value="B1">B1 Intermedio</option>
+                  <option value="B2" selected>B2 Intermedio Alto</option>
+                  <option value="C1">C1 Avanzado</option>
+                  <option value="C2">C2 Proficiente / Bilingüe</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Código de Test RIASEC *</label>
+                <input type="text" required placeholder="Ej. RIASEC-INV-94" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
+                <p class="text-[10px] text-slate-500 mt-0.5">
+                  Puedes calcularlo en nuestra sección de <a href="/moldeo-panama/test-vocacional" target="_blank" class="text-blue-400 underline">Test RIASEC</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dimensión 3: Video-Pitch y Proyecto Académico -->
+          <div class="border-b border-slate-800 pb-6 space-y-4">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              3. Video-Pitch de 60 Segundos y Evidencia de Proyectos
+            </h3>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">
+                Enlace a tu Video-Pitch Vertical de 60 Segundos *
+              </label>
+              <input type="url" required placeholder="https://youtu.be/... (video no listado) o enlace de Google Drive con acceso de lectura" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+              <p class="text-[11px] text-slate-500 mt-1">
+                Graba con tu celular un video de 1 minuto: menciona tu nombre, carrera, qué te apasiona aprender y por qué te gustaría formarte en una empresa. Súbelo como "No listado" en YouTube o a Google Drive y pega el enlace aquí.
+              </p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">
+                Enlace a tu Mejor Trabajo o Proyecto Universitario (Opcional)
+              </label>
+              <input type="url" placeholder="https://github.com/... o enlace de Drive con informe/diseño/cálculo" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">
+                ¿Para cuáles de las siguientes opciones legales eres elegible? *
+              </label>
+              <div class="space-y-2 text-xs text-slate-300">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" checked class="rounded border-slate-700 bg-slate-900 text-blue-500" />
+                  <span>Ley 513 de Pasantías (Tengo entre 18 y 25 años)</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" checked class="rounded border-slate-700 bg-slate-900 text-blue-500" />
+                  <span>Práctica Profesional de Graduación Universitaria (Necesito horas de práctica para mi título)</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="rounded border-slate-700 bg-slate-900 text-blue-500" />
+                  <span>Programa Mi Primer Empleo D.E. 27 (17 a 24 años sin historial laboral previo)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consentimiento Ley 81 ANTAI -->
+          <div class="p-4 bg-slate-950 border border-slate-800 rounded-2xl space-y-3">
+            <label class="flex items-start gap-2.5 text-xs text-slate-400 cursor-pointer">
+              <input type="checkbox" required class="mt-0.5 rounded border-slate-700 bg-slate-900 text-emerald-500 focus:ring-0" />
+              <span>
+                <strong>Consentimiento Informado (Ley 81 de 2019 ANTAI):</strong> Autorizo a Moldeo Panamá a publicar mi perfil de forma anónima en el directorio y a transferir mis datos de contacto únicamente a empresas formadoras interesadas en mi perfil para fines de pasantías o prácticas universitarias. Entiendo que puedo revocar este consentimiento en cualquier momento sin costo alguno a través del canal ARCO.
+              </span>
+            </label>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-4 rounded-xl text-sm font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-600 text-white shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.01]"
+          >
+            Crear mi Perfil de Moldeabilidad (100% Gratis)
+          </button>
+
+          <p class="text-center text-[11px] text-slate-500">
+            Ningún cobro será jamás realizado a los estudiantes (Art. 22 del Código de Trabajo).
+          </p>
+
+        </form>
+
+        <div id="registro-success" class="hidden text-center py-10 space-y-4">
+          <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-3xl font-bold">
+            ✓
+          </div>
+          <h3 class="text-2xl font-extrabold text-white">¡Perfil Creado Exitosamente!</h3>
+          <p class="text-sm text-slate-300 max-w-md mx-auto">
+            Tu tarjeta ha sido anonimizada y agregada al <strong class="text-emerald-400">Directorio de Talento Moldeable</strong>. Las empresas interesadas podrán revisar tu índice académico, inglés y video de presentación.
+          </p>
+          <div class="pt-4 flex justify-center gap-3">
+            <a href="/moldeo-panama/talento-moldeable" class="px-6 py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700">
+              Ver Directorio de Moldeables →
+            </a>
+            <a href="/moldeo-panama/vacantes" class="px-6 py-2.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white">
+              Explorar Vacantes para Postularme →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</Layout>
+
+<script>
+  const formEstudiante = document.getElementById('form-registro-estudiante') as HTMLFormElement | null;
+  const successDiv = document.getElementById('registro-success');
+
+  formEstudiante?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formEstudiante.classList.add('hidden');
+    successDiv?.classList.remove('hidden');
+  });
+</script>

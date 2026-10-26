@@ -1,0 +1,431 @@
+---
+import { vacantes, type Vacante } from '../data/vacantes';
+
+interface Props {
+  limite?: number;
+  mostrarFiltrosCompletos?: boolean;
+}
+
+const { limite, mostrarFiltrosCompletos = true } = Astro.props;
+const listaVacantes = limite ? vacantes.slice(0, limite) : vacantes;
+---
+
+<div class="space-y-8" id="vacantes-container">
+  
+  {mostrarFiltrosCompletos && (
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-6 shadow-lg space-y-4">
+      
+      <!-- Search Input -->
+      <div class="relative">
+        <svg class="w-5 h-5 text-slate-500 absolute left-4 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input 
+          type="text" 
+          id="vacantes-search" 
+          placeholder="Buscar por puesto, carrera, empresa o tecnología (ej. Industrial, React, Contabilidad, Ley 513)..." 
+          class="w-full bg-slate-950 border border-slate-800 rounded-xl pl-12 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+        />
+      </div>
+
+      <!-- Filters Row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Marco Legal</label>
+          <select id="filter-marco" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+            <option value="todos">Todos los marcos</option>
+            <option value="Ley 513">Ley 513 de Pasantías (B/. 450)</option>
+            <option value="Mi Primer Empleo">Mi Primer Empleo (D.E. 27)</option>
+            <option value="Práctica Profesional">Práctica Universitaria UTP/UP</option>
+            <option value="Trainee SEM">Trainee Multinacional SEM</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Área / Carrera</label>
+          <select id="filter-area" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+            <option value="todas">Todas las áreas</option>
+            <option value="Ingeniería & Software">Ingeniería & Software</option>
+            <option value="Finanzas & Contabilidad">Finanzas & Contabilidad</option>
+            <option value="Operaciones & Logística">Operaciones & Logística</option>
+            <option value="Marketing & Creativo">Marketing & Creativo</option>
+            <option value="Ciencias & Salud">Ciencias & Salud</option>
+            <option value="Legal & RRHH">Legal & RRHH</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Provincia</label>
+          <select id="filter-provincia" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+            <option value="todas">Todas las provincias</option>
+            <option value="Panamá">Ciudad de Panamá</option>
+            <option value="Panamá Oeste">Panamá Oeste (Chorrera/Arraiján)</option>
+            <option value="Colón">Colón (Zona Libre / Puertos)</option>
+            <option value="Chiriquí">Chiriquí (David / Boquete)</option>
+            <option value="Remoto/Híbrido">Remoto / Híbrido</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Universidad Afín</label>
+          <select id="filter-universidad" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+            <option value="todas">Cualquier Universidad</option>
+            <option value="UTP">UTP (Tecnológica)</option>
+            <option value="UP">UP (Universidad de Panamá)</option>
+            <option value="USMA">USMA (Santa María La Antigua)</option>
+            <option value="ULatina">Universidad Latina</option>
+            <option value="UNACHI">UNACHI (Chiriquí)</option>
+            <option value="ITSE">ITSE (Técnico Especializado)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Quick Stats & Counter -->
+      <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800/80">
+        <div>
+          Mostrando <span id="vacantes-counter" class="font-bold text-white">{listaVacantes.length}</span> vacantes formativas activas
+        </div>
+        <button id="reset-filters" class="text-xs text-blue-400 hover:text-blue-300 font-medium">
+          Limpiar filtros
+        </button>
+      </div>
+
+    </div>
+  )}
+
+  <!-- Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="vacantes-list">
+    {listaVacantes.map((v) => (
+      <article 
+        class="vacante-card bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-xl hover:shadow-blue-950/20 group"
+        data-titulo={v.titulo.toLowerCase()}
+        data-empresa={v.empresa.toLowerCase()}
+        data-area={v.area}
+        data-marco={v.marcoLegal}
+        data-provincia={v.provincia}
+        data-universidades={v.universidadAfin.join(',')}
+      >
+        <div>
+          <!-- Header Card -->
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform shadow-inner">
+                {v.logo}
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-400">{v.empresa}</p>
+                <div class="flex items-center gap-1.5 text-[11px] text-slate-500">
+                  <span>📍 {v.provincia} ({v.zona})</span>
+                </div>
+              </div>
+            </div>
+            {v.destacada && (
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/10 text-amber-300 border border-amber-400/30">
+                Destacada
+              </span>
+            )}
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
+            {v.titulo}
+          </h3>
+
+          <!-- Legal Badge & Remuneration -->
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              {v.marcoLegal}
+            </span>
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-blue-500/10 text-blue-300 border border-blue-500/20">
+              {v.remuneracion}
+            </span>
+          </div>
+
+          <p class="mt-3 text-xs text-slate-400 line-clamp-2 leading-relaxed">
+            {v.descripcionCorta}
+          </p>
+
+          <!-- Universities & Tutor Info -->
+          <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5 text-[11px] text-slate-400">
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-500 font-medium">Universidades:</span>
+              <div class="flex flex-wrap gap-1">
+                {v.universidadAfin.map((u) => (
+                  <span class="px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-medium text-[10px]">{u}</span>
+                ))}
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-500 font-medium">Tutor idóneo:</span>
+              <span class="text-slate-300 truncate">{v.tutorAsignado}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Card & Action -->
+        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+          <div class="text-[11px] text-slate-500 font-medium">
+            <span>{v.cuposDisponibles} {v.cuposDisponibles === 1 ? 'cupo' : 'cupos'}</span> · <span>{v.horasSemanales}h/sem</span>
+          </div>
+          <button 
+            type="button" 
+            class="open-modal-postulacion px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/20 transition-all hover:scale-105"
+            data-id={v.id}
+            data-titulo={v.titulo}
+            data-empresa={v.empresa}
+            data-marco={v.marcoLegal}
+            data-remuneracion={v.remuneracion}
+            data-requisitos={JSON.stringify(v.requisitosFormacion)}
+            data-beneficios={JSON.stringify(v.beneficios)}
+          >
+            Postularme Gratis
+          </button>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <!-- Empty Search Results Message -->
+  <div id="no-results" class="hidden text-center py-16 bg-slate-900 border border-slate-800 rounded-2xl">
+    <div class="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mx-auto text-2xl text-slate-500 mb-4">
+      🔍
+    </div>
+    <h4 class="text-lg font-bold text-white">No encontramos vacantes con esos filtros</h4>
+    <p class="mt-2 text-xs text-slate-400 max-w-sm mx-auto">
+      Prueba ajustando el área, la provincia o el marco legal para descubrir nuevas oportunidades formativas.
+    </p>
+    <button id="reset-filters-btn" class="mt-5 px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700">
+      Restablecer todos los filtros
+    </button>
+  </div>
+
+</div>
+
+<!-- Modal de Postulación Directa Sin Login -->
+<div id="modal-postulacion" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative text-left">
+    
+    <button id="close-modal" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="mb-5">
+      <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+        Postulación 100% Gratuita (Art. 22 C. Trabajo)
+      </span>
+      <h3 id="modal-vacante-titulo" class="text-xl font-bold text-white mt-2 leading-snug">
+        Título de la Vacante
+      </h3>
+      <p id="modal-vacante-empresa" class="text-xs font-medium text-slate-400">Empresa Formadora</p>
+    </div>
+
+    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1 mb-5">
+      <p><strong>Marco Legal:</strong> <span id="modal-vacante-marco" class="text-emerald-400">Ley 513</span></p>
+      <p><strong>Remuneración:</strong> <span id="modal-vacante-remuneracion" class="text-blue-300">B/. 450.00</span></p>
+    </div>
+
+    <form id="form-postulacion-directa" class="space-y-4">
+      <input type="hidden" id="modal-vacante-id" name="vacanteId" value="" />
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre Completo del Estudiante *</label>
+        <input type="text" required placeholder="Ej. Juan Pérez" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Universidad Actual *</label>
+          <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500">
+            <option value="">Selecciona...</option>
+            <option value="UTP">UTP</option>
+            <option value="UP">Universidad de Panamá</option>
+            <option value="USMA">USMA</option>
+            <option value="ULatina">Universidad Latina</option>
+            <option value="UIP">UIP</option>
+            <option value="UNACHI">UNACHI</option>
+            <option value="UDELAS">UDELAS</option>
+            <option value="ITSE">ITSE</option>
+            <option value="Otra">Otra institución</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Cédula de Identidad *</label>
+          <input type="text" required placeholder="Ej. 8-900-1234" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Correo Electrónico *</label>
+          <input type="email" required placeholder="correo@universidad.ac.pa" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Teléfono / WhatsApp *</label>
+          <input type="tel" required placeholder="+507 6000-0000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Enlace a Certificado EF SET o Video-Pitch (Opcional)</label>
+        <input type="url" placeholder="https://www.efset.org/cert/... o enlace YouTube/Drive" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+      </div>
+
+      <!-- Ley 81 Consent Checkbox -->
+      <div class="p-3 bg-slate-950 border border-slate-800 rounded-xl space-y-2">
+        <label class="flex items-start gap-2.5 text-[11px] text-slate-400 cursor-pointer">
+          <input type="checkbox" required class="mt-0.5 rounded border-slate-700 bg-slate-900 text-blue-600 focus:ring-0" />
+          <span>
+            Autorizo a Moldeo Panamá a transferir mis datos de contacto exclusivamente a la empresa formadora para evaluar mi postulación, conforme a la <strong class="text-slate-300">Ley 81 de 2019 de Protección de Datos Personales</strong>. Puedo revocarlo en cualquier momento sin costo.
+          </span>
+        </label>
+      </div>
+
+      <button type="submit" class="w-full py-3 rounded-xl text-xs font-bold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/30 transition-all">
+        Enviar Postulación Inmediata
+      </button>
+
+      <p class="text-[10px] text-center text-slate-500">
+        Sin costo para el estudiante. Recibirás confirmación por correo y WhatsApp.
+      </p>
+    </form>
+
+    <div id="modal-success" class="hidden text-center py-8 space-y-3">
+      <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-2xl font-bold">
+        ✓
+      </div>
+      <h4 class="text-lg font-bold text-white">¡Postulación Enviada con Éxito!</h4>
+      <p class="text-xs text-slate-400">
+        Tus datos han sido registrados bajo el protocolo de la empresa formadora. Te contactarán directamente para coordinar la entrevista formativa.
+      </p>
+      <button id="close-success-btn" class="mt-4 px-6 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-white">
+        Cerrar
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Client-side filtering logic
+  const searchInput = document.getElementById('vacantes-search') as HTMLInputElement | null;
+  const filterMarco = document.getElementById('filter-marco') as HTMLSelectElement | null;
+  const filterArea = document.getElementById('filter-area') as HTMLSelectElement | null;
+  const filterProvincia = document.getElementById('filter-provincia') as HTMLSelectElement | null;
+  const filterUniversidad = document.getElementById('filter-universidad') as HTMLSelectElement | null;
+  const counterSpan = document.getElementById('vacantes-counter');
+  const noResultsDiv = document.getElementById('no-results');
+  const resetBtn = document.getElementById('reset-filters');
+  const resetBtn2 = document.getElementById('reset-filters-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.vacante-card');
+
+  function applyFilters() {
+    const q = searchInput?.value.toLowerCase().trim() || '';
+    const marco = filterMarco?.value || 'todos';
+    const area = filterArea?.value || 'todas';
+    const provincia = filterProvincia?.value || 'todas';
+    const uni = filterUniversidad?.value || 'todas';
+
+    let count = 0;
+
+    cards.forEach((card) => {
+      const cardTitle = card.dataset.titulo || '';
+      const cardEmpresa = card.dataset.empresa || '';
+      const cardArea = card.dataset.area || '';
+      const cardMarco = card.dataset.marco || '';
+      const cardProv = card.dataset.provincia || '';
+      const cardUnis = card.dataset.universidades || '';
+
+      const matchSearch = !q || cardTitle.includes(q) || cardEmpresa.includes(q) || cardArea.toLowerCase().includes(q) || cardMarco.toLowerCase().includes(q);
+      const matchMarco = marco === 'todos' || cardMarco.includes(marco);
+      const matchArea = area === 'todas' || cardArea === area;
+      const matchProv = provincia === 'todas' || cardProv === provincia;
+      const matchUni = uni === 'todas' || cardUnis.includes(uni);
+
+      if (matchSearch && matchMarco && matchArea && matchProv && matchUni) {
+        card.style.display = 'flex';
+        count++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (counterSpan) counterSpan.textContent = count.toString();
+    if (noResultsDiv) {
+      if (count === 0) {
+        noResultsDiv.classList.remove('hidden');
+      } else {
+        noResultsDiv.classList.add('hidden');
+      }
+    }
+  }
+
+  searchInput?.addEventListener('input', applyFilters);
+  filterMarco?.addEventListener('change', applyFilters);
+  filterArea?.addEventListener('change', applyFilters);
+  filterProvincia?.addEventListener('change', applyFilters);
+  filterUniversidad?.addEventListener('change', applyFilters);
+
+  function resetAll() {
+    if (searchInput) searchInput.value = '';
+    if (filterMarco) filterMarco.value = 'todos';
+    if (filterArea) filterArea.value = 'todas';
+    if (filterProvincia) filterProvincia.value = 'todas';
+    if (filterUniversidad) filterUniversidad.value = 'todas';
+    applyFilters();
+  }
+
+  resetBtn?.addEventListener('click', resetAll);
+  resetBtn2?.addEventListener('click', resetAll);
+
+  // Modal logic
+  const modal = document.getElementById('modal-postulacion');
+  const closeModalBtn = document.getElementById('close-modal');
+  const closeSuccessBtn = document.getElementById('close-success-btn');
+  const form = document.getElementById('form-postulacion-directa') as HTMLFormElement | null;
+  const modalSuccess = document.getElementById('modal-success');
+
+  document.querySelectorAll('.open-modal-postulacion').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const el = btn as HTMLElement;
+      const id = el.dataset.id || '';
+      const titulo = el.dataset.titulo || '';
+      const empresa = el.dataset.empresa || '';
+      const marco = el.dataset.marco || '';
+      const remuneracion = el.dataset.remuneracion || '';
+
+      const tEl = document.getElementById('modal-vacante-titulo');
+      const eEl = document.getElementById('modal-vacante-empresa');
+      const mEl = document.getElementById('modal-vacante-marco');
+      const rEl = document.getElementById('modal-vacante-remuneracion');
+      const idEl = document.getElementById('modal-vacante-id') as HTMLInputElement | null;
+
+      if (tEl) tEl.textContent = titulo;
+      if (eEl) eEl.textContent = empresa;
+      if (mEl) mEl.textContent = marco;
+      if (rEl) rEl.textContent = remuneracion;
+      if (idEl) idEl.value = id;
+
+      if (form) form.classList.remove('hidden');
+      if (modalSuccess) modalSuccess.classList.add('hidden');
+      modal?.classList.remove('hidden');
+    });
+  });
+
+  closeModalBtn?.addEventListener('click', () => {
+    modal?.classList.add('hidden');
+  });
+
+  closeSuccessBtn?.addEventListener('click', () => {
+    modal?.classList.add('hidden');
+  });
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.classList.add('hidden');
+    modalSuccess?.classList.remove('hidden');
+  });
+</script>

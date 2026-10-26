@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestRiasec from '../components/TestRiasec.astro';
+---
+
+<Layout 
+  title="Test Vocacional RIASEC para Universitarios en Panamá (Anti-CV)"
+  description="Evalúa tus intereses vocacionales y potencial con el test de 5 minutos basado en el modelo O*NET RIASEC. Obtén tu código de perfil de moldeabilidad."
+  activePage="test"
+>
+  
+  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        Metodología O*NET de Aptitudes
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Test de Orientación Vocacional RIASEC
+      </h1>
+      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+        Descubre tu arquetipo profesional (Investigador, Realista, Artístico, Social, Emprendedor o Convencional) y adjúntalo a tu perfil para que los reclutadores sepan cómo asignarte proyectos formativos de alto impacto.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-12 md:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <TestRiasec />
+    </div>
+  </div>
+
+</Layout>

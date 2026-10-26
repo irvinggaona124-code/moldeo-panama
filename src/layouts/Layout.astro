@@ -1,0 +1,90 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import JsonLd from '../components/JsonLd.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  activePage?: string;
+  schema?: Record<string, any>;
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const u = (path: string) => `${base}${path}`;
+
+const {
+  title,
+  description = 'Moldeo Panamá: Portal de empleo exclusivo para estudiantes universitarios sin experiencia previa. Pasantías Ley 513 (B/. 450/mes deducible), Mi Primer Empleo y Prácticas Profesionales UTP, UP y USMA.',
+  image = '/og-image.png',
+  canonicalUrl = Astro.url.href,
+  activePage = 'home',
+  schema,
+} = Astro.props;
+
+const defaultSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Moldeo Panamá',
+  url: Astro.site ? Astro.site.href : 'https://irvinggaona124-code.github.io/moldeo-panama/',
+  description: description,
+  inLanguage: 'es-PA',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${Astro.site ? Astro.site.href : 'https://irvinggaona124-code.github.io/moldeo-panama'}/vacantes?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<!doctype html>
+<html lang="es-PA" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={u('/favicon.svg')} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title} | Moldeo Panamá</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="keywords" content="empleo panama sin experiencia, pasantias panama ley 513, practica profesional utp, primer empleo panama, practicantes universitarios panama, mi primer empleo mitradel, carreras tecnicas panama, talento joven panama" />
+    <meta name="author" content="Moldeo Panamá" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={`${title} | Moldeo Panamá`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_PA" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={`${title} | Moldeo Panamá`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <JsonLd schema={schema || defaultSchema} />
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500 selection:text-white">
+    <Header activePage={activePage} />
+    
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

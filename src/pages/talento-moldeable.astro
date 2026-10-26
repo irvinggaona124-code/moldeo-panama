@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CandidatosGrid from '../components/CandidatosGrid.astro';
+---
+
+<Layout 
+  title="Directorio de Talento Universitario Moldeable (Anti-CV) en Panamá"
+  description="Directorio público anonimizado de estudiantes universitarios sin experiencia laboral en Panamá. Evaluación por índice académico, inglés EF SET y perfil RIASEC."
+  activePage="talento"
+>
+  
+  <div class="py-12 md:py-16 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+        Protección de Datos · Ley 81 ANTAI
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Directorio de Talento Moldeable
+      </h1>
+      <p class="mt-4 text-base text-slate-300 leading-relaxed">
+        Reemplazamos el currículum vacío por indicadores objetivos de potencial. Explora perfiles con índice académico verificado, prueba de inglés EF SET y video-pitch de 60 segundos listos para ser moldeados por tu empresa.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-12 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CandidatosGrid />
+    </div>
+  </div>
+
+</Layout>
