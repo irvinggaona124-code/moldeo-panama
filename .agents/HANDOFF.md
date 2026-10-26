@@ -1,7 +1,16 @@
 # HANDOFF DE RELEVO DE CONTEXTO
-- **Fecha y Hora:** 2026-10-26 01:58:00
-- **Objetivo General:** Desarrollo y despliegue en producción de la plataforma web Moldeo Panamá (Talento Universitario Cero Experiencia, Ley 513 de Pasantías y Prácticas Profesionales a Presupuesto $0).
+- **Fecha y Hora:** 2026-10-26 02:17:30
+- **Objetivo General:** Lanzamiento y despliegue en producción de la plataforma Moldeo Panamá (Talento Universitario Cero Experiencia, Ley 513 de Pasantías y Prácticas Profesionales a Presupuesto $0).
 - **Cuenta Saliente:** irvinggaona124-code (Gemini 3.8 Flash High)
-- **Último Cambio Exacto:** Inicialización del proyecto web en c:\Users\ryami\Desktop\k y creación de la estructura de relevo.
-- **Siguiente Acción Inmediata:** Configuración de package.json, Astro, Tailwind CSS, componentes del portal y catálogo de 30 vacantes panameñas reales.
-- **Archivos Clave en Contexto:** package.json, astro.config.mjs, tailwind.config.mjs, src/
+- **Último Cambio Exacto:** Creación de la plataforma completa en Astro 4.16, Tailwind CSS y TypeScript. Despliegue en GitHub Pages con 13 endpoints verificados (200 OK), configuración de pasarelas locales (Yappy Comercial @moldeopanama y Tilopay), implementación de la Calculadora Fiscal Ley 513, Test RIASEC de 10 preguntas, Directorio de Talento Moldeable Anonimizado conforme a Ley 81 ANTAI, Kit de Práctica descargable y kit de prospección B2B y estudiantil.
+- **Siguiente Acción Inmediata:** Indexación del sitemap XML en Google Search Console y difusión orgánica en grupos de WhatsApp de la UTP y UP.
+- **Archivos Clave en Contexto:**
+  - `README.md`
+  - `src/data/vacantes.ts` (30 vacantes panameñas reales verificadas)
+  - `src/data/candidatos.ts` (15 perfiles de moldeabilidad anonimizados con EF SET y RIASEC)
+  - `src/components/CalculadoraFiscal.astro` (Simulador financiero DGI & MITRADEL)
+  - `src/components/TestRiasec.astro` (Test vocacional interactivo en cliente)
+  - `src/pages/vacantes.astro` (Buscador y filtros reactivos por carrera, marco legal y provincia)
+  - `src/pages/talento-moldeable.astro` (Directorio anonimizado con desbloqueo Yappy Comercial a B/. 15.00)
+  - `src/pages/legal.astro` y `src/pages/arco.astro` (Blindaje Art. 22 Código de Trabajo y Ley 81 ANTAI)
+  - `marketing-kit/` (Guías de difusión para WhatsApp, LinkedIn SEM, PyMEs y TikTok/Reels)
