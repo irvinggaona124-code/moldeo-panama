@@ -1,0 +1,1 @@
+import"./hoisted.DWA0OCEr.js";const e=document.getElementById("form-registro-estudiante"),s=document.getElementById("registro-success");e?.addEventListener("submit",t=>{t.preventDefault(),e.classList.add("hidden"),s?.classList.remove("hidden")});
