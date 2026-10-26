@@ -1,16 +1,17 @@
 # HANDOFF DE RELEVO DE CONTEXTO
-- **Fecha y Hora:** 2026-10-26 02:17:30
-- **Objetivo General:** Lanzamiento y despliegue en producción de la plataforma Moldeo Panamá (Talento Universitario Cero Experiencia, Ley 513 de Pasantías y Prácticas Profesionales a Presupuesto $0).
+- **Fecha y Hora:** 2026-10-26 02:49:00
+- **Objetivo General:** Rediseño arquitectónico y estético completo de la plataforma web Moldeo Panamá basado fielmente en el diseño de Figma SaaS moderno y limpio (Aetherfield: paleta Electric Lime #D4F634, fondo luminous slate #F8FAFC, barra flotante en píldora, Bento Grid de 3 tarjetas, tipografía Plus Jakarta Sans e Inter, microinteracciones funcionales de 120-200ms con cubic-bezier(0.16, 1, 0.3, 1), y cumplimiento estricto de accesibilidad WCAG AA).
 - **Cuenta Saliente:** irvinggaona124-code (Gemini 3.8 Flash High)
-- **Último Cambio Exacto:** Creación de la plataforma completa en Astro 4.16, Tailwind CSS y TypeScript. Despliegue en GitHub Pages con 13 endpoints verificados (200 OK), configuración de pasarelas locales (Yappy Comercial @moldeopanama y Tilopay), implementación de la Calculadora Fiscal Ley 513, Test RIASEC de 10 preguntas, Directorio de Talento Moldeable Anonimizado conforme a Ley 81 ANTAI, Kit de Práctica descargable y kit de prospección B2B y estudiantil.
-- **Siguiente Acción Inmediata:** Indexación del sitemap XML en Google Search Console y difusión orgánica en grupos de WhatsApp de la UTP y UP.
+- **Último Cambio Exacto:** Rediseño e integración de los tokens visuales y layout de Figma en los componentes `Header.astro`, `Hero.astro`, `TrianguloLegal.astro`, `VacantesGrid.astro`, `CandidatosGrid.astro`, `CalculadoraFiscal.astro`, `TestRiasec.astro`, `PactoFormadora.astro`, `KitRecursos.astro` y `Footer.astro`. Compilación estática limpia (11 páginas + sitemap.xml) y despliegue en producción en la rama `gh-pages` con 13 endpoints verificados 200 OK en `https://irvinggaona124-code.github.io/moldeo-panama/`.
+- **Siguiente Acción Inmediata:** Presentar el desglose anatómico, auditoría de diseño y catálogo de microinteracciones al usuario junto con los accesos directos al sitio en vivo.
 - **Archivos Clave en Contexto:**
-  - `README.md`
-  - `src/data/vacantes.ts` (30 vacantes panameñas reales verificadas)
-  - `src/data/candidatos.ts` (15 perfiles de moldeabilidad anonimizados con EF SET y RIASEC)
-  - `src/components/CalculadoraFiscal.astro` (Simulador financiero DGI & MITRADEL)
-  - `src/components/TestRiasec.astro` (Test vocacional interactivo en cliente)
-  - `src/pages/vacantes.astro` (Buscador y filtros reactivos por carrera, marco legal y provincia)
-  - `src/pages/talento-moldeable.astro` (Directorio anonimizado con desbloqueo Yappy Comercial a B/. 15.00)
-  - `src/pages/legal.astro` y `src/pages/arco.astro` (Blindaje Art. 22 Código de Trabajo y Ley 81 ANTAI)
-  - `marketing-kit/` (Guías de difusión para WhatsApp, LinkedIn SEM, PyMEs y TikTok/Reels)
+  - `tailwind.config.mjs` (Paleta Aetherfield: electric-lime #D4F634, navy #002B7F, slate neutrals, sombras pill y glow)
+  - `src/layouts/Layout.astro` (Tipografía Plus Jakarta Sans, fondo limpio #F8FAFC, prefers-reduced-motion)
+  - `src/components/Header.astro` (Barra pill flotante blanca con backdrop-blur y botón CTA electric-lime)
+  - `src/components/Hero.astro` (Subrayado orgánico lima, badges bento de métricas, caso de pasantía y anti-CV)
+  - `src/components/TrianguloLegal.astro` (Tarjetas de alto contraste Ley 513, D.E. 27 y Práctica Universitaria)
+  - `src/components/VacantesGrid.astro` (Buscador y filtros reactivos estilo SaaS con modal de postulación directa)
+  - `src/components/CandidatosGrid.astro` (Fichas anonimizadas con modal de desbloqueo Yappy Comercial)
+  - `src/components/CalculadoraFiscal.astro` (Simulador financiero DGI & MITRADEL con tipografía matemática nativa Unicode)
+  - `src/components/Footer.astro` (Banner gigante Aetherfield MOLDEO PANAMÁ en Electric Lime y footer corporativo)
+  - `dist/` (Build estático desplegado en rama gh-pages)
